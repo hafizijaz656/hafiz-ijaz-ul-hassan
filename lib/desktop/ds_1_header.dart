@@ -1,3 +1,4 @@
+import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 
 import '../statics/data_values.dart';
@@ -17,15 +18,14 @@ class DS1Header extends StatelessWidget {
       ),
       const SizedBox(width: 60.0),
       Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SelectableText(
             DataValues.headerGreetings,
             style: AppThemeData.darkTheme.textTheme.headlineSmall,
           ),
-          SelectableText(
-            DataValues.headerName,
-            style: AppThemeData.darkTheme.textTheme.displayMedium,
-          ),
+          animatedTypingName(),
           SelectableText(
             DataValues.headerTitle,
             style: AppThemeData.darkTheme.textTheme.titleLarge,
@@ -35,6 +35,21 @@ class DS1Header extends StatelessWidget {
         ],
       ),
     ];
+  }
+
+  animatedTypingName(){
+    return SizedBox(
+      width: 600,
+      child: DefaultTextStyle(
+        style: AppThemeData.darkTheme.textTheme.displayMedium!,
+        child: AnimatedTextKit(
+          repeatForever: true,
+          animatedTexts: [
+            TypewriterAnimatedText(DataValues.headerName),
+          ],
+        ),
+      ),
+    );
   }
 
   @override
