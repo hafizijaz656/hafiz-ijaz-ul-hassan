@@ -24,11 +24,11 @@ class Ms5Projects extends StatelessWidget {
               title: DataValues.projectsTitle,
               description: "",
             ),
-
+            SizedBox(height: size.height * 0.02),
             ///conversotech
             SelectableText(
               DataValues.conversoTech,
-              style: Theme.of(context).textTheme.headlineMedium,
+              style: Theme.of(context).textTheme.bodyLarge,
             ),
             SizedBox(height: size.height * 0.02),
             ContainerCard().type5(
@@ -45,7 +45,7 @@ class Ms5Projects extends StatelessWidget {
             ///prosings
             SelectableText(
               DataValues.prosigns,
-              style: Theme.of(context).textTheme.headlineMedium,
+              style: Theme.of(context).textTheme.bodyLarge,
             ),
             SizedBox(height: size.height * 0.02),
             ContainerCard().type5(
@@ -82,7 +82,7 @@ class Ms5Projects extends StatelessWidget {
             ///catalyicTech
             SelectableText(
               DataValues.catalyicTech,
-              style: Theme.of(context).textTheme.headlineMedium,
+              style: Theme.of(context).textTheme.bodyLarge,
             ),
             SizedBox(height: size.height * 0.02),
             ContainerCard().type5(
@@ -169,7 +169,7 @@ class Ms5Projects extends StatelessWidget {
             ///creCodeITProfessionals
             SelectableText(
               DataValues.creCodeITProfessionals,
-              style: Theme.of(context).textTheme.headlineMedium,
+              style: Theme.of(context).textTheme.bodyLarge,
             ),
             SizedBox(height: size.height * 0.02),
             ContainerCard().type5(
