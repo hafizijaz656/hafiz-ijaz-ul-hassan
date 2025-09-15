@@ -1,4 +1,4 @@
-import 'package:dileepabandara_dev/statics/data_values.dart';
+import 'package:hafiz_ijaz_ul_hassan/statics/data_values.dart';
 import 'package:flutter/material.dart';
 
 import 'desktop/ds_1_header.dart';

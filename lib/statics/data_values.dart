@@ -238,7 +238,7 @@ class DataValues {
   // Contact
   static const String contactTitle = 'Contact';
   static const String contactDescription =
-      'Thank you for visiting my profile. I’m always open to meaningful conversations, collaborations, and knowledge sharing. While I’m not very active on social media, you can still reach out to me there or via email for more professional discussions. I usually respond within 6–12 hours.';
+      'Thank you for visiting my profile. I’m always open to meaningful conversations, collaborations, and knowledge sharing. While I’m not very active on social media, you can still reach out to me there or via email for more professional discussions. I usually respond within 30 mints - 1 hours.';
   static const String contactBanner = 'Send me an email at';
   static const String contactEmail = 'hafizijaz656@gmail.com';
 
