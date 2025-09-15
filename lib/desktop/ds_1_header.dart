@@ -21,10 +21,7 @@ class DS1Header extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SelectableText(
-            DataValues.headerGreetings,
-            style: AppThemeData.darkTheme.textTheme.headlineSmall,
-          ),
+          helloWorld(),
           animatedTypingName(),
           SelectableText(
             DataValues.headerTitle,
@@ -37,7 +34,22 @@ class DS1Header extends StatelessWidget {
     ];
   }
 
-  animatedTypingName(){
+  helloWorld() {
+    return DefaultTextStyle(
+      style: AppThemeData.darkTheme.textTheme.headlineSmall!,
+      child: AnimatedTextKit(
+        animatedTexts: [
+          WavyAnimatedText(
+            DataValues.headerGreetings,
+          ),
+        ],
+        isRepeatingAnimation: true,
+        totalRepeatCount: 1,
+      ),
+    );
+  }
+
+  animatedTypingName() {
     return SizedBox(
       width: 600,
       child: DefaultTextStyle(
