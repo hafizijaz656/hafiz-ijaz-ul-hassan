@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="/">
+    <meta charset="UTF-8"/>
+    <title>Hafiz Ijaz Ul Hassan</title>
+    <meta name="description"
+          content="Hello there, I'm Hafiz Ijaz Ul Hassan. This is my personal website, which contains public information that anyone can find on the internet."/>
+    <link rel="manifest" href="manifest.json"/>
+
+    <!-- Browser meta tags & icons -->
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="apple-mobile-web-app-title" content="Hafiz Ijaz Ul Hassan"/>
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png"/>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="icons/favicon.ico" sizes="any"/>
+
+
+    <script> var serviceWorkerVersion = "{{flutter_service_worker_version}}"; </script>
+    <!-- This script adds the flutter initialization JS code -->
+    <script src="flutter.js" defer=""></script>
+    <link rel="stylesheet" type="text/css" href="splash/style.css"/>
+    <script src="splash/splash.js"></script>
+</head>
+
+<body>
+
+<div class="wrapper">
+    <!-- your parallax layers -->
+    <!------------ Starry Sky------------------------>
+    <div class="stars"></div>
+    <div class="twinkling"></div>
+    <!------------ End - Starry Sky------------------>
+    <div class="wrapper">
+        <!------------ Parallax Scene-------------------->
+        <ul id="scene" class="scene">
+            <li class="layer" data-depth="0.00"></li>
+            <li class="layer" data-depth="0.30"><a href="#0">Loading...</a></li>
+            <li class="layer" data-depth="0.60"><a href="#1" class="moveUp">H</a></li>
+            <li class="layer" data-depth="0.90"><a href="#2" class="moveDown">A</a></li>
+            <li class="layer" data-depth="0.70"><a href="#3" class="moveUp">F</a></li>
+            <li class="layer" data-depth="0.20"><a href="#4" class="moveDown">I</a></li>
+            <li class="layer" data-depth="0.30"><a href="#5" class="moveUp">Z</a></li>
+            <li class="layer" data-depth="0.20"><a href="#6" class="moveDown">I</a></li>
+            <li class="layer" data-depth="0.60"><a href="#7" class="moveUp">J</a></li>
+            <li class="layer" data-depth="0.90"><a href="#8" class="moveDown">A</a></li>
+            <li class="layer" data-depth="0.70"><a href="#9" class="moveUp">Z</a></li>
+        </ul>
+        <!------------ End - Parallax Scene------------->
+
+    </div>
+</div>
+
+
+
+<script src="flutter_bootstrap.js?v=1.0.0" async></script>
+
+<script>
+    // Hide splash once Flutter renders first frame
+    window.addEventListener('flutter-first-frame', function () {
+      document.querySelector('.wrapper')?.remove();
+      document.querySelector('.stars')?.remove();
+      document.querySelector('.twinkling')?.remove();
+    });
+</script>
+
+</body>
+</html>
