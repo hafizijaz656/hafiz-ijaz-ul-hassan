@@ -1,6 +1,8 @@
-import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'dart:developer';
+
+import 'package:flutter/material.dart';
+import 'package:hafiz_ijaz_ul_hassan/theme/app_theme.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ButtonTextLarge extends StatelessWidget {
   final String text;
@@ -22,7 +24,7 @@ class ButtonTextLarge extends StatelessWidget {
         onPressed: onPressed,
         child: Text(
           text,
-          style: Theme.of(context).textTheme.titleMedium,
+          style: AppThemeData.lightTheme.textTheme.titleMedium,
         ),
       ),
     );
@@ -34,9 +36,12 @@ class ButtonTextSmall extends StatelessWidget {
   final String message;
   final Uri url;
 
-  const ButtonTextSmall(
-      {Key? key, required this.text, required this.message, required this.url})
-      : super(key: key);
+  const ButtonTextSmall({
+    Key? key,
+    required this.text,
+    required this.message,
+    required this.url,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -53,7 +58,7 @@ class ButtonTextSmall extends StatelessWidget {
           },
           child: Text(
             text,
-            style: Theme.of(context).textTheme.labelMedium,
+            style: AppThemeData.lightTheme.textTheme.labelMedium,
           ),
         ),
       ),

@@ -30,8 +30,12 @@ class ButtonIcon {
         },
         child: Tooltip(
           message: url.toString(),
-          child: Image.asset('assets/icons/$name.png',
-              height: height, width: width),
+          child: Image.asset(
+            'assets/icons/$name.png',
+            height: height,
+            width: width,
+            color: AppThemeData.lightTheme.iconTheme.color,
+          ),
         ),
       ),
     );
@@ -65,7 +69,7 @@ class CustomButton {
             width: 300,
             decoration: BoxDecoration(
               color: AppThemeData.primaryColor,
-              borderRadius: BorderRadius.circular(12)
+              borderRadius: BorderRadius.circular(12),
             ),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -74,9 +78,9 @@ class CustomButton {
                   "Send",
                   style: TextStyle(
                     fontSize:
-                    AppThemeData.darkTheme.textTheme.titleMedium!.fontSize,
+                        AppThemeData.lightTheme.textTheme.titleMedium!.fontSize,
                     fontWeight:
-                    AppThemeData.darkTheme.textTheme.titleLarge!.fontWeight,
+                        AppThemeData.lightTheme.textTheme.titleLarge!.fontWeight,
                     color: AppThemeData.textWhite,
                   ),
                 ),

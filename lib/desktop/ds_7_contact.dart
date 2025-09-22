@@ -66,7 +66,7 @@ class _DS7ContactState extends State<DS7Contact> {
   Widget build(BuildContext context) {
     return Container(
       key: KeyHolders.contactKey,
-      color: AppThemeData.backgroundGrey,
+      color: AppThemeData.backgroundWhite,
       child: Padding(
         padding: const EdgeInsets.all(40.0),
         child: Column(
@@ -87,10 +87,10 @@ class _DS7ContactState extends State<DS7Contact> {
                   DataValues.contactBanner,
                   style: TextStyle(
                     fontSize:
-                        AppThemeData.darkTheme.textTheme.titleMedium!.fontSize,
+                        AppThemeData.lightTheme.textTheme.titleMedium!.fontSize,
                     fontWeight:
-                        AppThemeData.darkTheme.textTheme.titleLarge!.fontWeight,
-                    color: AppThemeData.textWhite,
+                        AppThemeData.lightTheme.textTheme.titleLarge!.fontWeight,
+                    color: AppThemeData.textBlack,
                   ),
                 ),
                 const SizedBox(width: 5.0),
@@ -105,7 +105,7 @@ class _DS7ContactState extends State<DS7Contact> {
                         content: Text(
                           'Email successfully copied to clipboard',
                           textAlign: TextAlign.center,
-                          style: AppThemeData.darkTheme.textTheme.bodyLarge,
+                          style: AppThemeData.lightTheme.textTheme.bodyLarge,
                         ),
                         duration: const Duration(seconds: 2),
                       ));
@@ -116,9 +116,9 @@ class _DS7ContactState extends State<DS7Contact> {
                         DataValues.contactEmail,
                         style: TextStyle(
                           fontSize: AppThemeData
-                              .darkTheme.textTheme.titleMedium!.fontSize,
+                              .lightTheme.textTheme.titleMedium!.fontSize,
                           fontWeight: AppThemeData
-                              .darkTheme.textTheme.titleLarge!.fontWeight,
+                              .lightTheme.textTheme.titleLarge!.fontWeight,
                           color: AppThemeData.textPrimary,
                         ),
                       ),
@@ -145,13 +145,16 @@ class _DS7ContactState extends State<DS7Contact> {
           children: [
             TextFormField(
               controller: nameController,
+              style:  const TextStyle(
+                color: AppThemeData.textBlack,
+              ),
               decoration: InputDecoration(
                 labelText: "Your Name",
                 labelStyle: const TextStyle(
-                  color: AppThemeData.textWhite,
+                  color: AppThemeData.textBlack,
                 ),
                 hintStyle: const TextStyle(
-                  color: AppThemeData.textWhite,
+                  color: AppThemeData.textBlack,
                 ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
@@ -182,13 +185,16 @@ class _DS7ContactState extends State<DS7Contact> {
             ),
             TextFormField(
               controller: emailController,
+              style:  const TextStyle(
+                color: AppThemeData.textBlack,
+              ),
               decoration: InputDecoration(
                 labelText: "Your Email",
                 labelStyle: const TextStyle(
-                  color: AppThemeData.textWhite,
+                  color: AppThemeData.textBlack,
                 ),
                 hintStyle: const TextStyle(
-                  color: AppThemeData.textWhite,
+                  color: AppThemeData.textBlack,
                 ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
@@ -220,13 +226,16 @@ class _DS7ContactState extends State<DS7Contact> {
             ),
             TextFormField(
               controller: messageController,
+              style:  const TextStyle(
+                color: AppThemeData.textBlack,
+              ),
               decoration: InputDecoration(
                 labelText: "Message",
                 labelStyle: const TextStyle(
-                  color: AppThemeData.textWhite,
+                  color: AppThemeData.textBlack,
                 ),
                 hintStyle: const TextStyle(
-                  color: AppThemeData.textWhite,
+                  color: AppThemeData.textBlack,
                 ),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),

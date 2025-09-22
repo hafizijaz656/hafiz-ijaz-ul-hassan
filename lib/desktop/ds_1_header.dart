@@ -25,7 +25,7 @@ class DS1Header extends StatelessWidget {
           animatedTypingName(),
           SelectableText(
             DataValues.headerTitle,
-            style: AppThemeData.darkTheme.textTheme.titleLarge,
+            style: AppThemeData.lightTheme.textTheme.titleLarge,
           ),
           const SizedBox(height: 20.0),
           const SocialProfiles(),
@@ -36,15 +36,14 @@ class DS1Header extends StatelessWidget {
 
   helloWorld() {
     return DefaultTextStyle(
-      style: AppThemeData.darkTheme.textTheme.headlineSmall!,
+      style: AppThemeData.lightTheme.textTheme.headlineSmall!,
       child: AnimatedTextKit(
+        totalRepeatCount: 1,
         animatedTexts: [
           WavyAnimatedText(
             DataValues.headerGreetings,
           ),
         ],
-        isRepeatingAnimation: true,
-        totalRepeatCount: 1,
       ),
     );
   }
@@ -53,11 +52,14 @@ class DS1Header extends StatelessWidget {
     return SizedBox(
       width: 600,
       child: DefaultTextStyle(
-        style: AppThemeData.darkTheme.textTheme.displayMedium!,
+        style: AppThemeData.lightTheme.textTheme.displayMedium!,
         child: AnimatedTextKit(
-          repeatForever: true,
+          totalRepeatCount:1,
           animatedTexts: [
-            TypewriterAnimatedText(DataValues.headerName),
+            TypewriterAnimatedText(
+              DataValues.headerName,
+              speed: const Duration(milliseconds: 300),
+            ),
           ],
         ),
       ),
@@ -67,7 +69,14 @@ class DS1Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: AppThemeData.backgroundBlack,
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(
+            "assets/images/header_background.jpg",
+          ),
+          fit: BoxFit.cover, // cover, contain, fill, etc.
+        ),
+      ),
       child: Padding(
           padding: const EdgeInsets.only(top: 60.0, bottom: 40.0),
           child: Column(

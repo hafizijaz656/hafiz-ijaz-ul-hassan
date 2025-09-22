@@ -14,10 +14,11 @@ class ContainerCard {
     required String image,
     required String message,
     required Uri url,
+    required bool isButtonEnabled,
   }) {
     return Container(
       decoration: BoxDecoration(
-        color: AppThemeData.cardGrey,
+        color: AppThemeData.backgroundWhite,
         borderRadius: BorderRadius.circular(10.0),
         boxShadow: [
           BoxShadow(
@@ -43,23 +44,26 @@ class ContainerCard {
                   title,
                   style: TextStyle(
                     fontSize:
-                        AppThemeData.darkTheme.textTheme.titleMedium!.fontSize,
+                        AppThemeData.lightTheme.textTheme.titleMedium!.fontSize,
                     fontWeight: AppThemeData
-                        .darkTheme.textTheme.headlineSmall!.fontWeight,
-                    color: AppThemeData.textWhite,
+                        .lightTheme.textTheme.headlineSmall!.fontWeight,
+                    color: AppThemeData.textBlack,
                   ),
                 ),
               ],
             ),
             const SizedBox(height: 10.0),
-            SelectableText(description,
-                style: AppThemeData.darkTheme.textTheme.labelLarge),
+            SelectableText(
+              description,
+              style: AppThemeData.lightTheme.textTheme.labelLarge,
+            ),
             const SizedBox(height: 20.0),
-            // ButtonTextSmall(
-            //   text: 'View More >>',
-            //   message: message,
-            //   url: url,
-            // ),
+            if(isButtonEnabled)
+            ButtonTextSmall(
+              text: 'View More >>',
+              message: message,
+              url: url,
+            ),
           ],
         ),
       ),
@@ -74,7 +78,7 @@ class ContainerCard {
   }) {
     return Container(
       decoration: BoxDecoration(
-        color: AppThemeData.cardGrey,
+        color: AppThemeData.backgroundWhite,
         borderRadius: BorderRadius.circular(10.0),
         boxShadow: [
           BoxShadow(
@@ -97,9 +101,9 @@ class ContainerCard {
                 SelectableText(title,
                     style: TextStyle(
                       fontSize: AppThemeData
-                          .darkTheme.textTheme.titleMedium!.fontSize,
+                          .lightTheme.textTheme.titleMedium!.fontSize,
                       fontWeight: AppThemeData
-                          .darkTheme.textTheme.headlineSmall!.fontWeight,
+                          .lightTheme.textTheme.headlineSmall!.fontWeight,
                       color: AppThemeData.textPrimary,
                     )),
                 const SizedBox(height: 10.0),
@@ -144,7 +148,7 @@ class ContainerCard {
   }) {
     return Container(
       decoration: BoxDecoration(
-        color: AppThemeData.cardGrey,
+        color: AppThemeData.backgroundWhite,
         borderRadius: BorderRadius.circular(10.0),
         boxShadow: [
           BoxShadow(
@@ -171,9 +175,9 @@ class ContainerCard {
                 SelectableText(title,
                     style: TextStyle(
                       fontSize: AppThemeData
-                          .darkTheme.textTheme.titleMedium!.fontSize,
+                          .lightTheme.textTheme.titleMedium!.fontSize,
                       fontWeight: AppThemeData
-                          .darkTheme.textTheme.headlineSmall!.fontWeight,
+                          .lightTheme.textTheme.headlineSmall!.fontWeight,
                       color: AppThemeData.textPrimary,
                     )),
                 const SizedBox(height: 10.0),
@@ -194,7 +198,7 @@ class ContainerCard {
                   )
                 : Text(
                     'See you soon with the link :)',
-                    style: AppThemeData.darkTheme.textTheme.labelMedium,
+                    style: AppThemeData.lightTheme.textTheme.labelMedium,
                   ),
           ],
         ),
@@ -227,9 +231,9 @@ class ContainerCard {
                 message,
                 style: TextStyle(
                   fontSize:
-                      AppThemeData.darkTheme.textTheme.labelLarge!.fontSize,
+                      AppThemeData.lightTheme.textTheme.labelLarge!.fontSize,
                   fontWeight:
-                      AppThemeData.darkTheme.textTheme.labelLarge!.fontWeight,
+                      AppThemeData.lightTheme.textTheme.labelLarge!.fontWeight,
                   color: AppThemeData.textWhite,
                 ),
               ),
@@ -251,7 +255,7 @@ class ContainerCard {
   }) {
     return Container(
       decoration: BoxDecoration(
-        color: AppThemeData.cardGrey,
+        color: AppThemeData.backgroundWhite,
         borderRadius: BorderRadius.circular(10.0),
         boxShadow: [
           BoxShadow(
@@ -274,9 +278,9 @@ class ContainerCard {
                 SelectableText(projectName,
                     style: TextStyle(
                       fontSize: AppThemeData
-                          .darkTheme.textTheme.titleMedium!.fontSize,
+                          .lightTheme.textTheme.titleMedium!.fontSize,
                       fontWeight: AppThemeData
-                          .darkTheme.textTheme.headlineSmall!.fontWeight,
+                          .lightTheme.textTheme.headlineSmall!.fontWeight,
                       color: AppThemeData.textPrimary,
                     )),
                 const SizedBox(height: 10.0),
@@ -297,7 +301,7 @@ class ContainerCard {
                   )
                 : Text(
                     'See you soon with the link :)',
-                    style: AppThemeData.darkTheme.textTheme.labelMedium,
+                    style: AppThemeData.lightTheme.textTheme.labelMedium,
                   ),
           ],
         ),

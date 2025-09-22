@@ -14,7 +14,7 @@ class Ds5Projects extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Container(
       key: KeyHolders.projectsKey,
-      color: AppThemeData.backgroundGrey,
+      color: AppThemeData.backgroundWhite,
       child: Padding(
         padding: const EdgeInsets.all(40.0),
         child: Column(
@@ -24,11 +24,11 @@ class Ds5Projects extends StatelessWidget {
               title: DataValues.projectsTitle,
               description: "",
             ),
-
+            SizedBox(height: size.height * 0.05),
             ///conversotech
             SelectableText(
               DataValues.conversoTech,
-              style: Theme.of(context).textTheme.headlineMedium,
+              style: AppThemeData.lightTheme.textTheme.titleMedium,
             ),
             SizedBox(height: size.height * 0.02),
             Row(
@@ -52,12 +52,11 @@ class Ds5Projects extends StatelessWidget {
                 const Expanded(child: SizedBox.shrink()),
               ],
             ),
-            SizedBox(height: size.height * 0.02),
-
+            SizedBox(height: size.height * 0.05),
             ///prosings
             SelectableText(
               DataValues.prosigns,
-              style: Theme.of(context).textTheme.headlineMedium,
+            style: AppThemeData.lightTheme.textTheme.titleMedium,
             ),
             SizedBox(height: size.height * 0.02),
             Row(
@@ -101,12 +100,12 @@ class Ds5Projects extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: size.height * 0.02),
+            SizedBox(height: size.height * 0.05),
 
             ///catalyicTech
             SelectableText(
               DataValues.catalyicTech,
-              style: Theme.of(context).textTheme.headlineMedium,
+            style: AppThemeData.lightTheme.textTheme.titleMedium,
             ),
             SizedBox(height: size.height * 0.02),
             Row(
@@ -150,7 +149,7 @@ class Ds5Projects extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: size.height * 0.02),
+            SizedBox(height: size.height * 0.03),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -172,7 +171,7 @@ class Ds5Projects extends StatelessWidget {
                 const Expanded(child: SizedBox.shrink()),
               ],
             ),
-            SizedBox(height: size.height * 0.02),
+            SizedBox(height: size.height * 0.03),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -236,12 +235,12 @@ class Ds5Projects extends StatelessWidget {
                 const Expanded(child: SizedBox.shrink()),
               ],
             ),
-            SizedBox(height: size.height * 0.02),
+            SizedBox(height: size.height * 0.05),
 
             ///creCodeITProfessionals
             SelectableText(
               DataValues.creCodeITProfessionals,
-              style: Theme.of(context).textTheme.headlineMedium,
+            style: AppThemeData.lightTheme.textTheme.titleMedium,
             ),
             SizedBox(height: size.height * 0.02),
             Row(
@@ -271,7 +270,7 @@ class Ds5Projects extends StatelessWidget {
                     isButtonEnabled: false,
                   ),
                 ),
-                SizedBox(width: MediaQuery.of(context).size.width * 0.05),
+                SizedBox(width: size.width * 0.05),
                 Expanded(
                   child: ContainerCard().type5(
                     projectName: DataValues.project3Name,

@@ -31,9 +31,9 @@ class ContainerBanner {
                           title1,
                           style: TextStyle(
                             fontSize: AppThemeData
-                                .darkTheme.textTheme.titleLarge!.fontSize,
+                                .lightTheme.textTheme.titleLarge!.fontSize,
                             fontWeight: AppThemeData
-                                .darkTheme.textTheme.titleLarge!.fontWeight,
+                                .lightTheme.textTheme.titleLarge!.fontWeight,
                             color: AppThemeData.textWhite,
                           ),
                         ),
@@ -42,9 +42,9 @@ class ContainerBanner {
                           title2,
                           style: TextStyle(
                             fontSize: AppThemeData
-                                .darkTheme.textTheme.titleLarge!.fontSize,
+                                .lightTheme.textTheme.titleLarge!.fontSize,
                             fontWeight: AppThemeData
-                                .darkTheme.textTheme.titleLarge!.fontWeight,
+                                .lightTheme.textTheme.titleLarge!.fontWeight,
                             color: AppThemeData.textPrimary,
                           ),
                         ),
@@ -57,9 +57,9 @@ class ContainerBanner {
                           title1,
                           style: TextStyle(
                             fontSize: AppThemeData
-                                .darkTheme.textTheme.titleLarge!.fontSize,
+                                .lightTheme.textTheme.titleLarge!.fontSize,
                             fontWeight: AppThemeData
-                                .darkTheme.textTheme.titleLarge!.fontWeight,
+                                .lightTheme.textTheme.titleLarge!.fontWeight,
                             color: AppThemeData.textWhite,
                           ),
                         ),
@@ -68,9 +68,9 @@ class ContainerBanner {
                           title2,
                           style: TextStyle(
                             fontSize: AppThemeData
-                                .darkTheme.textTheme.titleLarge!.fontSize,
+                                .lightTheme.textTheme.titleLarge!.fontSize,
                             fontWeight: AppThemeData
-                                .darkTheme.textTheme.titleLarge!.fontWeight,
+                                .lightTheme.textTheme.titleLarge!.fontWeight,
                             color: AppThemeData.textPrimary,
                           ),
                         ),
@@ -81,9 +81,9 @@ class ContainerBanner {
                 description,
                 style: TextStyle(
                   fontSize:
-                      AppThemeData.darkTheme.textTheme.labelLarge!.fontSize,
+                      AppThemeData.lightTheme.textTheme.labelLarge!.fontSize,
                   fontWeight:
-                      AppThemeData.darkTheme.textTheme.labelLarge!.fontWeight,
+                      AppThemeData.lightTheme.textTheme.labelLarge!.fontWeight,
                   color: AppThemeData.textGreyDark,
                 ),
                 textAlign: TextAlign.center,
@@ -123,9 +123,9 @@ class ContainerBanner {
             message,
             textAlign: TextAlign.center,
             style: TextStyle(
-              fontSize: AppThemeData.darkTheme.textTheme.labelLarge!.fontSize,
+              fontSize: AppThemeData.lightTheme.textTheme.labelLarge!.fontSize,
               fontWeight:
-                  AppThemeData.darkTheme.textTheme.labelLarge!.fontWeight,
+                  AppThemeData.lightTheme.textTheme.labelLarge!.fontWeight,
               color: AppThemeData.textGreyDark,
             ),
           ),

@@ -23,10 +23,11 @@ class _DesktopNavBarState extends State<DesktopNavBar> {
       children: [
         if (activeSection == DataValues.navBarAboutMe)
           ButtonRectangle(
-              name: DataValues.navBarAboutMe,
-              onPressed: () {},
-              color: AppThemeData.buttonPrimary,
-              message: '')
+            name: DataValues.navBarAboutMe,
+            onPressed: () {},
+            color: AppThemeData.buttonPrimary,
+            message: '',
+          )
         else
           ButtonTextLarge(
             text: DataValues.navBarAboutMe,
@@ -162,7 +163,7 @@ class _MobileNavBarState extends State<MobileNavBar> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: AppThemeData.backgroundBlack,
+      backgroundColor: AppThemeData.backgroundWhite,
       child: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         children: [
@@ -315,13 +316,13 @@ class _MobileNavBarState extends State<MobileNavBar> {
           DataValues.headerName,
           style: TextStyle(
             color: AppThemeData.textPrimary,
-            fontSize: AppThemeData.darkTheme.textTheme.titleLarge?.fontSize,
+            fontSize: AppThemeData.lightTheme.textTheme.titleLarge?.fontSize,
             fontWeight: FontWeight.bold,
           ),
         ),
         SelectableText(
           DataValues.headerTitle,
-          style: AppThemeData.darkTheme.textTheme.labelLarge,
+          style: AppThemeData.lightTheme.textTheme.labelLarge,
         ),
       ],
     );

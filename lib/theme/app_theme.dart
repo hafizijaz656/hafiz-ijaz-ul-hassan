@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 
 class AppThemeData {
   // Colors: Main Colors
-  static const Color primaryColor = Color.fromRGBO(1, 159, 171, 1.0);
+  static const Color primaryColor = Color(0xFF1C6EA4);
   static const Color secondaryColor = Color.fromRGBO(18, 18, 18, 1.0);
 
   // Colors: Text
   static const textPrimary = primaryColor;
   static const textWhite = Color.fromRGBO(255, 255, 255, 1.0);
+  static const textBlack = Color.fromRGBO(0, 0, 0, 1.0);
   static const textGreyDark = Color.fromRGBO(147, 147, 147, 1.0);
   static const textGreyLight = Color.fromRGBO(205, 205, 205, 1.0);
   static const textCursor = Color.fromRGBO(61, 61, 61, 1.0);
@@ -20,6 +21,7 @@ class AppThemeData {
 
   // Colors: Background and Cards
   static const backgroundBlack = Color.fromRGBO(18, 18, 18, 1.0);
+  static const backgroundWhite = Color.fromRGBO(255, 255, 255, 1.0);
   static const backgroundGrey = Color.fromRGBO(25, 25, 25, 1.0);
   static const cardGrey = Color.fromRGBO(15, 15, 15, 1.0);
   static const tooltip = Color.fromRGBO(33, 33, 33, 1.0);
@@ -32,8 +34,9 @@ class AppThemeData {
   static const double cornerRadiusCard = 40.0;
   static const double cornerRadiusCardButton = 30.0;
 
-  // Dark Theme
-  static final ThemeData darkTheme = ThemeData(
+
+  // Light Theme
+  static final ThemeData lightTheme = ThemeData(
     brightness: Brightness.dark,
     primaryColor: primaryColor,
     scaffoldBackgroundColor: secondaryColor,
@@ -59,44 +62,53 @@ class AppThemeData {
     ),
     snackBarTheme: const SnackBarThemeData(
       backgroundColor: primaryColor,
-      contentTextStyle: TextStyle(color: textWhite),
-      actionTextColor: textWhite,
+      contentTextStyle: TextStyle(color: textBlack),
+      actionTextColor: textBlack,
     ),
     textTheme: const TextTheme(
       displayMedium: TextStyle(
         fontSize: 54.0,
         fontWeight: FontWeight.w700,
-        color: textWhite,
+        color: textBlack,
       ),
       displaySmall: TextStyle(
-          fontSize: 42.0,
-          fontWeight: FontWeight.w700,
-          color: AppThemeData.textWhite),
+        fontSize: 42.0,
+        fontWeight: FontWeight.w700,
+        color: AppThemeData.textBlack,
+      ),
       headlineSmall: TextStyle(
-          fontSize: 28.0,
-          fontWeight: FontWeight.w700,
-          color: AppThemeData.textPrimary),
+        fontSize: 28.0,
+        fontWeight: FontWeight.w700,
+        color: AppThemeData.textPrimary,
+      ),
       titleLarge: TextStyle(
-          fontSize: 20.0,
-          fontWeight: FontWeight.w500,
-          color: AppThemeData.textGreyDark),
+        fontSize: 20.0,
+        fontWeight: FontWeight.w500,
+        color: AppThemeData.secondaryColor,
+      ),
       titleMedium: TextStyle(
-          fontSize: 18.0,
-          fontWeight: FontWeight.w500,
-          color: AppThemeData.textWhite),
+        fontSize: 18.0,
+        fontWeight: FontWeight.w500,
+        color: AppThemeData.textBlack,
+      ),
       titleSmall: TextStyle(
-          fontSize: 16.0,
-          fontWeight: FontWeight.w400,
-          color: AppThemeData.textGreyLight),
+        fontSize: 16.0,
+        fontWeight: FontWeight.w400,
+        color: AppThemeData.secondaryColor,
+      ),
       labelLarge: TextStyle(
-          fontSize: 14.0,
-          fontWeight: FontWeight.w400,
-          color: AppThemeData.textGreyDark),
+        fontSize: 14.0,
+        fontWeight: FontWeight.w400,
+        color: AppThemeData.secondaryColor,
+      ),
       labelMedium: TextStyle(
-          fontSize: 12.0,
-          fontWeight: FontWeight.w500,
-          color: AppThemeData.textWhite),
+        fontSize: 12.0,
+        fontWeight: FontWeight.w500,
+        color: AppThemeData.textBlack,
+      ),
     ),
-    colorScheme: const ColorScheme.dark().copyWith(background: backgroundBlack),
+    colorScheme: const ColorScheme.dark().copyWith(
+      background: backgroundBlack,
+    ),
   );
 }

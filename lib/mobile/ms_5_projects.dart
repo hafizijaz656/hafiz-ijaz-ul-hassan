@@ -14,7 +14,7 @@ class Ms5Projects extends StatelessWidget {
     Size size = MediaQuery.of(context).size;
     return Container(
       key: KeyHolders.projectsKey,
-      color: AppThemeData.backgroundGrey,
+      color: AppThemeData.backgroundWhite,
       child: Padding(
         padding: const EdgeInsets.all(40.0),
         child: Column(

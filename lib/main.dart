@@ -1,5 +1,5 @@
-import 'package:hafiz_ijaz_ul_hassan/statics/data_values.dart';
 import 'package:flutter/material.dart';
+import 'package:hafiz_ijaz_ul_hassan/statics/data_values.dart';
 
 import 'desktop/ds_1_header.dart';
 import 'desktop/ds_2_about_me.dart';
@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: DataValues.appName,
       debugShowCheckedModeBanner: false,
-      theme: AppThemeData.darkTheme,
+      theme: AppThemeData.lightTheme,
       home: const HomePage(),
     );
   }
@@ -128,7 +128,7 @@ class _HomePageState extends State<HomePage> {
         controller: _scrollController,
         physics: const BouncingScrollPhysics(),
         child: Container(
-          color: AppThemeData.backgroundGrey,
+          color: AppThemeData.backgroundWhite,
           child: ResponsiveScreenProvider.isDesktopScreen(context)
               ? desktopUI()
               : mobileUI(),

@@ -10,6 +10,7 @@ class MS1Header extends StatelessWidget {
 
   List<Widget> headerData() {
     return [
+      const SizedBox(height: 40.0),
       Image.asset(
         'assets/images/logo.png',
         height: 250.0,
@@ -24,7 +25,7 @@ class MS1Header extends StatelessWidget {
           animatedTypingName(),
           SelectableText(
             DataValues.headerTitle,
-            style: AppThemeData.darkTheme.textTheme.titleLarge,
+            style: AppThemeData.lightTheme.textTheme.titleLarge,
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 20.0),
@@ -36,15 +37,14 @@ class MS1Header extends StatelessWidget {
 
   helloWorld() {
     return DefaultTextStyle(
-      style: AppThemeData.darkTheme.textTheme.headlineSmall!,
+      style: AppThemeData.lightTheme.textTheme.headlineSmall!,
       child: AnimatedTextKit(
+        totalRepeatCount:1,
         animatedTexts: [
           WavyAnimatedText(
             DataValues.headerGreetings,
           ),
         ],
-        isRepeatingAnimation: true,
-        totalRepeatCount: 1,
       ),
     );
   }
@@ -53,13 +53,14 @@ class MS1Header extends StatelessWidget {
     return SizedBox(
       height: 200,
       child: DefaultTextStyle(
-        style: AppThemeData.darkTheme.textTheme.displayMedium!,
+        style: AppThemeData.lightTheme.textTheme.displayMedium!,
         child: AnimatedTextKit(
-          repeatForever: true,
+          totalRepeatCount:1,
           animatedTexts: [
             TypewriterAnimatedText(
               DataValues.headerName,
               textAlign: TextAlign.center,
+              speed: const Duration(milliseconds: 300),
             ),
           ],
         ),
@@ -70,18 +71,26 @@ class MS1Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: AppThemeData.backgroundBlack,
+      decoration: const BoxDecoration(
+        image: DecorationImage(
+          image: AssetImage(
+            "assets/images/header_background.jpg",
+          ),
+          fit: BoxFit.cover, // cover, contain, fill, etc.
+        ),
+      ),
       child: Padding(
-          padding: const EdgeInsets.only(bottom: 40.0),
-          child: Column(
-            children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: headerData(),
-              ),
-              const SizedBox(height: 40.0),
-            ],
-          )),
+        padding: const EdgeInsets.only(bottom: 40.0),
+        child: Column(
+          children: [
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: headerData(),
+            ),
+            const SizedBox(height: 40.0),
+          ],
+        ),
+      ),
     );
   }
 }

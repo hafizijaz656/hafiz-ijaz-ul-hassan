@@ -64,6 +64,7 @@ class MS2AboutMe extends StatelessWidget {
             image: 'assets/icons/student.png',
             message: DataValues.linkedinURL.toString(),
             url: DataValues.linkedinURL,
+            isButtonEnabled: false,
           ),
           const SizedBox(height: 20.0),
           ContainerCard().type1(
@@ -72,6 +73,7 @@ class MS2AboutMe extends StatelessWidget {
             image: 'assets/icons/developer.png',
             message: DataValues.linkedinURL.toString(),
             url: DataValues.linkedinURL,
+            isButtonEnabled: false,
           ),
         ],
       ),
@@ -82,7 +84,7 @@ class MS2AboutMe extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       key: KeyHolders.aboutKey,
-      color: AppThemeData.backgroundGrey,
+      color: AppThemeData.backgroundWhite,
       child: Padding(
         padding: const EdgeInsets.all(40.0),
         child: Column(

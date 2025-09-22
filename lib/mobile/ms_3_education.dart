@@ -13,15 +13,16 @@ class MS3Education extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       key: KeyHolders.educationKey,
-      color: AppThemeData.backgroundGrey,
+      color: AppThemeData.backgroundWhite,
       child: Padding(
         padding: const EdgeInsets.all(40.0),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const FrameTitle(
-                title: DataValues.educationTitle,
-                description: DataValues.educationDescription),
+              title: DataValues.educationTitle,
+              description: DataValues.educationDescription,
+            ),
             const SizedBox(height: 30.0),
             ContainerCard().type2(
               title: DataValues.educationOrg1Title,

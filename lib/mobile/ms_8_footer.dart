@@ -11,7 +11,7 @@ class MS8Footer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      color: AppThemeData.backgroundBlack,
+      color: AppThemeData.backgroundWhite,
       child: Column(
         children: [
           const SizedBox(
@@ -20,7 +20,7 @@ class MS8Footer extends StatelessWidget {
           SelectableText(
               DataValues.appName,
             // '${DataValues.appName} (v${DataValues.appVersion})',
-            style: Theme.of(context).textTheme.bodyMedium,
+            style: AppThemeData.lightTheme.textTheme.labelMedium,
           ),
           const SizedBox(
             height: 10,
@@ -31,7 +31,7 @@ class MS8Footer extends StatelessWidget {
             children: [
               SelectableText(
                 DataValues.builtWith,
-                style: Theme.of(context).textTheme.bodyMedium,
+                style: AppThemeData.lightTheme.textTheme.labelMedium,
               ),
               const SizedBox(
                 width: 5,
