@@ -1,4 +1,4 @@
-# Umair Akbar Nadeem
+# Hafiz Ijaz Ul Hassan
 
 ![GitHub Repo Size](https://img.shields.io/github/repo-size/dileepabandara/dileepabandara.dev?color=d62936&label=Repo%20Size&style=flat-square)
 ![GitHub Code Size](https://img.shields.io/github/languages/code-size/dileepabandara/dileepabandara.dev?color=e6a400&label=Code%20Size&style=flat-square)
