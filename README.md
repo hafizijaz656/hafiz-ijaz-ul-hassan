@@ -1,19 +1,5 @@
 # Hafiz Ijaz Ul Hassan
 
-![GitHub Repo Size](https://img.shields.io/github/repo-size/dileepabandara/dileepabandara.dev?color=d62936&label=Repo%20Size&style=flat-square)
-![GitHub Code Size](https://img.shields.io/github/languages/code-size/dileepabandara/dileepabandara.dev?color=e6a400&label=Code%20Size&style=flat-square)
-![GitHub License](https://img.shields.io/github/license/dileepabandara/dileepabandara.dev?color=eb7005&label=License&style=flat-square)
-![Total Code Lines](https://img.shields.io/tokei/lines/github/dileepabandara/dileepabandara.dev?color=805b3c&label=Total%20Code%20Lines&style=flat-square)
-![GitHub Commit Activity](https://img.shields.io/github/commit-activity/m/dileepabandara/dileepabandara.dev?color=138a3d&label=Commit%20Activity&style=flat-square)
-![GitHub Language Count](https://img.shields.io/github/languages/count/dileepabandara/dileepabandara.dev?color=1f77b4&label=Total%20Languages&style=flat-square)
-![GitHub Top Language](https://img.shields.io/github/languages/top/dileepabandara/dileepabandara.dev?color=7f0c7f&style=flat-square)
-![GitHub Issues](https://img.shields.io/github/issues/dileepabandara/dileepabandara.dev?color=098f76&label=GitHub%20Issues&style=flat-square)
-![GitHub Pull Erequests](https://img.shields.io/github/issues-pr/dileepabandara/dileepabandara.dev?color=2c324f&label=GitHub%20Pull%20Requests&style=flat-square)
-![CodeFactor Grade](https://img.shields.io/codefactor/grade/github/dileepabandara/dileepabandara.dev?color=0c22ed&label=CodeFactor%20Grade&style=flat-square)
-![GitHub Latest Release](https://img.shields.io/github/v/release/dileepabandara/dileepabandara.dev?color=f5426f&label=Latest%20Release&style=flat-square)
-![GitHub Total Downloads](https://img.shields.io/github/downloads/dileepabandara/dileepabandara.dev/total?color=4a2600&label=Total%20Downloads&style=flat-square)
-![Website Status](https://img.shields.io/website?down_message=Down%20%26%20Offline&label=Website%20Status&up_message=Up%20%26%20Online&url=https%3A%2F%2Fdileepabandara.dev)
-
 **Live Preview: 👉🏽 [hafiz-ijaz-ul-hassan.web.app](https://hafiz-ijaz-ul-hassan.web.app/)**
 
 ✨ Hello there, I'm Hafiz Ijaz Ul Hassan. This is my personal website, which contains publicly available information that can be found on the internet.
