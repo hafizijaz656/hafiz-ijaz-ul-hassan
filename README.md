@@ -14,19 +14,13 @@
 ![GitHub Total Downloads](https://img.shields.io/github/downloads/dileepabandara/dileepabandara.dev/total?color=4a2600&label=Total%20Downloads&style=flat-square)
 ![Website Status](https://img.shields.io/website?down_message=Down%20%26%20Offline&label=Website%20Status&up_message=Up%20%26%20Online&url=https%3A%2F%2Fdileepabandara.dev)
 
-**Live Preview: 👉🏽 [dileepabandara.dev](https://dileepabandara.dev)**
+**Live Preview: 👉🏽 [hafiz-ijaz-ul-hassan.web.app](https://hafiz-ijaz-ul-hassan.web.app/)**
 
-✨ Hello there, I'm Umair Akbar Nadeem. This is my personal website, which contains public information that anyone can find on the internet.
-
-## 🎬 Captured Moment
-
-![cover](https://user-images.githubusercontent.com/80202913/231434564-ce1b5761-3f5e-4c85-8593-87bda5a79d62.gif)
+✨ Hello there, I'm Hafiz Ijaz Ul Hassan. This is my personal website, which contains publicly available information that can be found on the internet.
 
 ## 🌐 Website
 
-<https://dileepabandara.github.io/dileepabandara.dev>  
-<https://gh.dileepabandara.dev/dileepabandara.dev>  
-<https://dileepabandara.dev>
+<https://hafiz-ijaz-ul-hassan.web.app/>  
 
 ## 🎉 Release Status
 
@@ -38,13 +32,7 @@ Initial release date - April 12, 2023
 
 Source Code
 
-- [main](https://github.com/dileepabandara/dileepabandara.dev/tree/main) - Stable and latest version of the source code
-- [1.0.0](https://github.com/dileepabandara/dileepabandara.dev/tree/1.0.0) - Stable 1.0.0 version of the source code
-- [1.1.x](https://github.com/dileepabandara/dileepabandara.dev/tree/1.1.x) - Unstable and development versions of the source code
-
-Web Build
-
-- [web-build](https://github.com/dileepabandara/dileepabandara.dev/tree/web-build) - Stable and latest version of the web build
+- [main](https://github.com/hafizijaz656/hafiz-ijaz-ul-hassan.git) - Stable and latest version of the source code
 
 ## 💙 Built With
 
@@ -61,7 +49,7 @@ Web Build
 - Should be fine with the `flutter doctor` command.
 - Anything related to the Flutter app development.
 
-## 💡 How to Setup
+## 💡 How to Set Up
 
 - Download or clone the repository.
 - Move the project to the selected directory.
@@ -103,10 +91,10 @@ details [LICENSE.md](https://github.com/dileepabandara/dileepabandara.dev/blob/m
 
 ## 👨‍💻 Developed By
 
-Umair Akbar Nadeem  
-[©dileepabandara.dev](https://dileepabandara.dev)
+Hafiz Ijaz Ul Hassan  
+[©HafizIjazUlHassan](https://hafiz-ijaz-ul-hassan.web.app/)
 
 ## 💬 Contact
 
 Send me an email if you need to contact me to discuss anything.  
-Email - <contact@dileepabandara.dev>
+Email - <hafizijaz656@gmail.com>
