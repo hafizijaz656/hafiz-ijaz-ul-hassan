@@ -1,0 +1,3 @@
+const String appName = 'Hafiz Ijaz Ul Hassan';
+const String aboutMe =
+    "I am a dedicated Software Engineer currently working as a Mobile Application Developer, specializing in Flutter and cross-platform solutions. Passionate about building impactful, user-focused applications, I actively seek opportunities for personal and professional growth. With experience in designing scalable architectures, collaborating with cross-functional teams, and integrating modern technologies, I strive to deliver innovative solutions that create real value. Beyond work, I believe in giving back to the community through knowledge sharing and collaboration, while staying curious and eager to explore emerging trends in technology.";

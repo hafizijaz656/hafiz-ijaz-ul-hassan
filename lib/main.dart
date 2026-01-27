@@ -1,27 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:hafiz_ijaz_ul_hassan/statics/data_values.dart';
-
-import 'desktop/ds_1_header.dart';
-import 'desktop/ds_2_about_me.dart';
-import 'desktop/ds_3_education.dart';
-import 'desktop/ds_4_experience.dart';
-import 'desktop/ds_5_projects.dart';
-import 'desktop/ds_6_technotes.dart';
-import 'desktop/ds_7_contact.dart';
-import 'desktop/ds_8_footer.dart';
-import 'mobile/ms_1_header.dart';
-import 'mobile/ms_2_about_me.dart';
-import 'mobile/ms_3_education.dart';
-import 'mobile/ms_4_experience.dart';
-import 'mobile/ms_5_projects.dart';
-import 'mobile/ms_6_technotes.dart';
-import 'mobile/ms_7_contact.dart';
-import 'mobile/ms_8_footer.dart';
-import 'theme/app_theme.dart';
-import 'theme/responsive_screen_provider.dart';
-import 'widgets/nav_bar.dart';
+// ignore: depend_on_referenced_packages
+import 'package:flutter_web_plugins/url_strategy.dart';
+import 'src/routing/router.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
+  usePathUrlStrategy();
   runApp(const MyApp());
 }
 
@@ -30,121 +14,31 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: DataValues.appName,
+    return MaterialApp.router(
+      title: 'Hafiz Ijaz Ul Hassan - Portfolio',
       debugShowCheckedModeBanner: false,
-      theme: AppThemeData.lightTheme,
-      home: const HomePage(),
-    );
-  }
-}
-
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
-
-  @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  bool _showBackToTopButton = false;
-  late ScrollController _scrollController;
-
-  @override
-  void initState() {
-    _scrollController = ScrollController()
-      ..addListener(
-        () {
-          setState(
-            () {
-              if (_scrollController.offset >= 300) {
-                _showBackToTopButton = true;
-              } else {
-                _showBackToTopButton = false;
-              }
-            },
-          );
-        },
-      );
-
-    super.initState();
-  }
-
-  @override
-  void dispose() {
-    _scrollController.dispose();
-    super.dispose();
-  }
-
-  void _scrollToTop() {
-    _scrollController.animateTo(0,
-        duration: const Duration(milliseconds: 1000), curve: Curves.easeInOut);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    Widget desktopUI() {
-      return ListView(
-        shrinkWrap: true,
-        physics: const ClampingScrollPhysics(),
-        children: const [
-          DS1Header(),
-          DS2AboutMe(),
-          DS3Education(),
-          DS4Experience(),
-          Ds5Projects(),
-          DS6TechNotes(),
-          DS7Contact(),
-          DS8Footer(),
-        ],
-      );
-    }
-
-    Widget mobileUI() {
-      return ListView(
-        shrinkWrap: true,
-        physics: const ClampingScrollPhysics(),
-        children: const [
-          MS1Header(),
-          MS2AboutMe(),
-          MS3Education(),
-          MS4Experience(),
-          Ms5Projects(),
-          MS6TechNotes(),
-          MS7Contact(),
-          MS8Footer(),
-        ],
-      );
-    }
-
-    return Scaffold(
-      appBar: ResponsiveScreenProvider.isDesktopScreen(context)
-          ? null
-          : AppBar(elevation: 0.0),
-      drawer: ResponsiveScreenProvider.isDesktopScreen(context)
-          ? null
-          : const MobileNavBar(),
-      body: SingleChildScrollView(
-        controller: _scrollController,
-        physics: const BouncingScrollPhysics(),
-        child: Container(
-          color: AppThemeData.backgroundWhite,
-          child: ResponsiveScreenProvider.isDesktopScreen(context)
-              ? desktopUI()
-              : mobileUI(),
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: const Color(0xFF2563EB),
+          primary: const Color(0xFF2563EB),
+          secondary: const Color(0xFF7C3AED),
+          surface: const Color(0xFFFFFFFF),
+        ),
+        scaffoldBackgroundColor: const Color(0xFFFFFFFF),
+        useMaterial3: true,
+        textTheme: GoogleFonts.poppinsTextTheme(),
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            backgroundColor: const Color(0xFF2563EB),
+            foregroundColor: Colors.white,
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+            ),
+          ),
         ),
       ),
-      floatingActionButton: _showBackToTopButton == false
-          ? null
-          : FloatingActionButton(
-              onPressed: _scrollToTop,
-              tooltip: 'Go to top',
-              backgroundColor: AppThemeData.buttonPrimary,
-              foregroundColor: AppThemeData.iconSecondary,
-              child: const Icon(
-                Icons.arrow_upward_rounded,
-              ),
-            ),
+      routerConfig: router,
     );
   }
 }
