@@ -56,53 +56,53 @@ class _Timeline extends StatelessWidget {
         // Simple vertical timeline for now, can be responsive
         return Column(
           children: [
-            _TimelineItem(
+            const _TimelineItem(
               title: 'Sr.Mobile Apps Developer (Flutter)',
               company: 'Epazz Tech',
               period: 'OCT 2025 - PRESENT',
               description:
                   'Developed and maintained scalable cross-platform OtherShip Apps using Flutter & Dart. Integrated RESTFul APIs, Firebase, and 3rd-party SDKs. Applied Flutter RiverPod state management and mobile architecture best practices. Followed Agile/TDD workflows with Git for clean, stable, and maintainable code.',
-              tags: const ['FLUTTER', 'DART', 'RIVERPOD', 'FIREBASE'],
+              tags: ['FLUTTER', 'DART', 'RIVERPOD', 'FIREBASE'],
               isLeft: true,
               icon: FontAwesomeIcons.briefcase,
             ),
-            _TimelineItem(
+            const _TimelineItem(
               title: 'Mobile Apps Developer (Flutter)',
               company: 'ConversoTech',
               period: 'MAY 2024 - OCT 2025',
               description:
                   'Developed and maintained scalable cross-platform apps using Flutter & Dart. Integrated RESTFul APIs, Firebase, and 3rd-party SDKs. Applied GetX state management and mobile architecture best practices. Followed Agile/TDD workflows with Git.',
-              tags: const ['FLUTTER', 'DART', 'GETX', 'FIREBASE'],
+              tags: ['FLUTTER', 'DART', 'GETX', 'FIREBASE'],
               isLeft: false,
               icon: FontAwesomeIcons.mobile,
             ),
-            _TimelineItem(
+            const _TimelineItem(
               title: 'Flutter Developer',
               company: 'Prosigns',
               period: 'MAR 2023 - MAR 2024',
               description:
                   'Contributed to enterprise-level mobile applications (HRM, CRM). Built responsive cross-platform apps ensuring seamless performance. Optimized application performance, enhanced UI/UX, and integrated secure authentication.',
-              tags: const ['FLUTTER', 'REST API', 'UI/UX'],
+              tags: ['FLUTTER', 'REST API', 'UI/UX'],
               isLeft: true,
               icon: FontAwesomeIcons.code,
             ),
-            _TimelineItem(
+            const _TimelineItem(
               title: 'Flutter Developer / Mobile App Developer',
               company: 'Catalyic Tech',
               period: 'AUG 2021 - MAR 2023',
               description:
                   'Developed cross-platform mobile applications using Flutter and native Android. Collaborated with backend teams to integrate RESTful APIs and Firebase. Implemented clean architecture and state management solutions.',
-              tags: const ['FLUTTER', 'ANDROID', 'CLEAN ARCH'],
+              tags: ['FLUTTER', 'ANDROID', 'CLEAN ARCH'],
               isLeft: false,
               icon: FontAwesomeIcons.layerGroup,
             ),
-            _TimelineItem(
+            const _TimelineItem(
               title: 'Android Developer',
               company: 'CreCode IT Professionals',
               period: 'APR 2020 - APR 2021',
               description:
                   'Began career as an Android Developer. Contributed to multiple projects including Tasbeeh Counter, Islam Plus, and Ramzan Plus. Strengthened expertise in Java, Kotlin, and Android native development.',
-              tags: const ['ANDROID', 'JAVA', 'KOTLIN'],
+              tags: ['ANDROID', 'JAVA', 'KOTLIN'],
               isLeft: true,
               icon: FontAwesomeIcons.android,
             ),
