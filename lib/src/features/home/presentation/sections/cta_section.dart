@@ -35,18 +35,18 @@ class CtaSection extends StatelessWidget {
                     'Ready to build something amazing?',
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.displaySmall?.copyWith(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
                   ),
                   const SizedBox(height: AppSizes.p16),
                   Text(
                     "I'm currently open to new opportunities and collaboration on innovative mobile projects.",
                     textAlign: TextAlign.center,
                     style: Theme.of(context).textTheme.titleMedium?.copyWith(
-                      color: Colors.white.withValues(alpha: 0.9),
-                      height: 1.5,
-                    ),
+                          color: Colors.white.withValues(alpha: 0.9),
+                          height: 1.5,
+                        ),
                   ),
                   const SizedBox(height: AppSizes.p48),
                   Wrap(
@@ -74,7 +74,7 @@ class CtaSection extends StatelessWidget {
                       OutlinedButton(
                         onPressed: () async {
                           final Uri url = Uri.parse(
-                            'assets/docs/hafiz_ijaz_ul_hassan_CV.pdf',
+                            '/assets/assets/docs/hafiz_ijaz_ul_hassan_CV.pdf',
                           );
                           if (!await launchUrl(url)) {
                             debugPrint('Could not launch $url');

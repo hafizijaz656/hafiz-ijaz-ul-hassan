@@ -27,6 +27,8 @@ class _FeaturedProjectsSectionState extends State<FeaturedProjectsSection> {
       category: 'Flutter',
       androidUrl:
           'https://play.google.com/store/apps/details?id=com.othership.hwms',
+      iosUrl:
+          'https://apps.apple.com/pk/app/othership-workplace-scheduler/id6449196566',
       imageUrl:
           'https://play-lh.googleusercontent.com/M7K1rHodQi1lxP1685ytc6WL1iQvAPLksovGovn7o3Nz7zeJa45_RFvi9VDi29np0g',
     ),
@@ -39,6 +41,8 @@ class _FeaturedProjectsSectionState extends State<FeaturedProjectsSection> {
       category: 'Flutter',
       androidUrl:
           'https://play.google.com/store/apps/details?id=com.othership.kiosk',
+      iosUrl:
+          'https://apps.apple.com/pk/app/othership-room-display/id6479629590',
       imageUrl:
           'https://play-lh.googleusercontent.com/mW1PhyF-H_bpC7Gt8vAT9bpkVyNahWYYxJNghCcaFbdm_T_otlsiC1d5DWIbkWE-AZs',
     ),
@@ -51,8 +55,73 @@ class _FeaturedProjectsSectionState extends State<FeaturedProjectsSection> {
       category: 'Flutter',
       androidUrl:
           'https://play.google.com/store/apps/details?id=com.othership.visitorapp',
+      iosUrl:
+          'https://apps.apple.com/pk/app/othership-visitor-management/id6741065734',
       imageUrl:
           'https://play-lh.googleusercontent.com/Jq1HRhD6tySH2KDwnUhQrqkxd2CiUrrWzWXY4Os3jiW3hQ9ehtPqAHb9hq-3jc7OUww',
+    ),
+    Project(
+      title: 'BRG Loopers',
+      description:
+          'A secure and efficient platform for official loopers to manage daily work activities, shifts, and rides.',
+      tags: ['FLUTTER', 'DART', 'IOS'],
+      imageColor: const Color(0xFF1E88E5),
+      category: 'Flutter',
+      iosUrl: 'https://apps.apple.com/pk/app/brg-loopers/id6752260397',
+    ),
+    Project(
+      title: 'The Loopers',
+      description:
+          'The Loopers is the epitome of luxury transportation in the UAE, offering a premium experience that redefines the way you travel.',
+      tags: ['FLUTTER', 'DART', 'IOS'],
+      imageColor: const Color(0xFFD32F2F),
+      category: 'Flutter',
+      iosUrl: 'https://apps.apple.com/us/app/the-loopers/id6752260346',
+    ),
+    Project(
+      title: 'Retwho',
+      description:
+          'A dynamic B2B platform designed to connect wholesalers and retailers, facilitating a seamless and efficient flow of goods.',
+      tags: ['FLUTTER', 'DART', 'B2B'],
+      imageColor: const Color(0xFF009688),
+      category: 'Flutter',
+      androidUrl:
+          'https://play.google.com/store/apps/details?id=com.retwho.aizaf.group&pcampaignid=web_share',
+      iosUrl: 'https://apps.apple.com/us/app/retwho/id6593708926',
+    ),
+    Project(
+      title: 'Forpartum',
+      description:
+          'Forpartum empowers mothers with personalized care, data-driven insights, and essential resources to support every stage of their postpartum journey, offering unmatched tools to help mothers heal, recover, and thrive.',
+      tags: ['FLUTTER', 'DART', 'WELLNESS'],
+      imageColor: const Color(0xFFEC407A),
+      category: 'Flutter',
+      androidUrl:
+          'https://play.google.com/store/apps/details?id=com.solinovation.forpartum&pcampaignid=web_share',
+      iosUrl:
+          'https://apps.apple.com/us/app/forpartum-wellness-for-moms/id6738465336',
+    ),
+    Project(
+      title: 'Meal Planner : Recipe Book',
+      description:
+          'Your AI Personal Kitchen Assistant! Scan ingredients for instant recipes and get personalized meal plans fitting your health goals. The ultimate solution for smarter cooking and healthier living.',
+      tags: ['FLUTTER', 'DART', 'LIFESTYLE'],
+      imageColor: const Color(0xFF66BB6A),
+      category: 'Flutter',
+      iosUrl:
+          'https://apps.apple.com/us/app/ai-meal-planner-recipe-book/id6747282317',
+    ),
+    Project(
+      title: 'AI Story Generator ~ Novel AI',
+      description:
+          'Unleash Your Inner Story! Let AI Turn Your Emotions Into Poetry. Your personal poetry assistant for generating powerful, emotional, and creative poems in seconds.',
+      tags: ['FLUTTER', 'DART', 'AI'],
+      imageColor: const Color(0xFFAB47BC),
+      category: 'Flutter',
+      androidUrl:
+          'https://play.google.com/store/apps/details?id=com.solinovation.poemai',
+      iosUrl:
+          'https://apps.apple.com/us/app/ai-story-generator-novel-ai/id6746508816',
     ),
 
     // ConversoTech
@@ -241,7 +310,9 @@ class _FeaturedProjectsSectionState extends State<FeaturedProjectsSection> {
                       children: [
                         Text(
                           'Featured Projects',
-                          style: Theme.of(context).textTheme.displaySmall
+                          style: Theme.of(context)
+                              .textTheme
+                              .displaySmall
                               ?.copyWith(
                                 fontWeight: FontWeight.bold,
                                 color: AppColors.textPrimary,
@@ -250,9 +321,10 @@ class _FeaturedProjectsSectionState extends State<FeaturedProjectsSection> {
                         const SizedBox(height: AppSizes.p16),
                         Text(
                           'Showcasing innovation through clean code and intuitive design.',
-                          style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                            color: AppColors.textSecondary,
-                          ),
+                          style:
+                              Theme.of(context).textTheme.bodyLarge?.copyWith(
+                                    color: AppColors.textSecondary,
+                                  ),
                         ),
                       ],
                     ),
@@ -325,9 +397,10 @@ class _FilterButtons extends StatelessWidget {
               child: Text(
                 filter,
                 style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                  color: isSelected ? Colors.white : AppColors.textSecondary,
-                  fontWeight: FontWeight.bold,
-                ),
+                      color:
+                          isSelected ? Colors.white : AppColors.textSecondary,
+                      fontWeight: FontWeight.bold,
+                    ),
               ),
             ),
           );
@@ -399,7 +472,8 @@ class _ProjectCardState extends State<_ProjectCard> {
           ),
           boxShadow: [
             BoxShadow(
-              color: AppColors.primary.withValues(alpha: _isHovered ? 0.15 : 0.05),
+              color:
+                  AppColors.primary.withValues(alpha: _isHovered ? 0.15 : 0.05),
               blurRadius: _isHovered ? 30 : 20,
               offset: Offset(0, _isHovered ? 12 : 4),
             ),
@@ -477,7 +551,9 @@ class _ProjectCardState extends State<_ProjectCard> {
                         Expanded(
                           child: Text(
                             widget.project.title,
-                            style: Theme.of(context).textTheme.titleLarge
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleLarge
                                 ?.copyWith(
                                   fontSize: 18,
                                   fontWeight: FontWeight.bold,
@@ -500,6 +576,20 @@ class _ProjectCardState extends State<_ProjectCard> {
                               Icons.android,
                               size: 16,
                               color: Colors.green,
+                            ),
+                          ),
+                        if (widget.project.iosUrl != null)
+                          Container(
+                            margin: const EdgeInsets.only(left: 8),
+                            padding: const EdgeInsets.all(6),
+                            decoration: BoxDecoration(
+                              color: Colors.black.withValues(alpha: 0.1),
+                              shape: BoxShape.circle,
+                            ),
+                            child: const Icon(
+                              Icons.apple,
+                              size: 16,
+                              color: Colors.black,
                             ),
                           ),
                       ],
@@ -535,7 +625,9 @@ class _ProjectCardState extends State<_ProjectCard> {
                               ),
                               child: Text(
                                 tag,
-                                style: Theme.of(context).textTheme.labelSmall
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .labelSmall
                                     ?.copyWith(
                                       color: AppColors.textSecondary,
                                       fontWeight: FontWeight.w600,
@@ -547,55 +639,131 @@ class _ProjectCardState extends State<_ProjectCard> {
                           )
                           .toList(),
                     ),
-                    if (widget.project.androidUrl != null) ...[
+                    if (widget.project.androidUrl != null ||
+                        widget.project.iosUrl != null) ...[
                       const SizedBox(height: 20),
-                      SizedBox(
-                        width: double.infinity,
-                        height: 40,
-                        child: OutlinedButton(
-                          onPressed: () async {
-                            final url = Uri.parse(widget.project.androidUrl!);
-                            if (await canLaunchUrl(url)) {
-                              await launchUrl(url);
-                            }
-                          },
-                          style: OutlinedButton.styleFrom(
-                            foregroundColor: AppColors.primary,
-                            side: BorderSide(
-                              color: _isHovered
-                                  ? AppColors.primary
-                                  : Colors.grey.shade300,
-                            ),
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                            backgroundColor: _isHovered
-                                ? AppColors.primary.withValues(alpha: 0.05)
-                                : Colors.transparent,
-                          ),
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                'View on Play Store',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.w600,
-                                  color: _isHovered
-                                      ? AppColors.primary
-                                      : AppColors.textSecondary,
+                      Row(
+                        children: [
+                          if (widget.project.androidUrl != null)
+                            Expanded(
+                              child: SizedBox(
+                                height: 40,
+                                child: OutlinedButton(
+                                  onPressed: () async {
+                                    final url =
+                                        Uri.parse(widget.project.androidUrl!);
+                                    if (await canLaunchUrl(url)) {
+                                      await launchUrl(url);
+                                    }
+                                  },
+                                  style: OutlinedButton.styleFrom(
+                                    foregroundColor: AppColors.primary,
+                                    side: BorderSide(
+                                      color: _isHovered
+                                          ? AppColors.primary
+                                          : Colors.grey.shade300,
+                                    ),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    backgroundColor: _isHovered
+                                        ? AppColors.primary
+                                            .withValues(alpha: 0.05)
+                                        : Colors.transparent,
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 4),
+                                  ),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Flexible(
+                                        child: Text(
+                                          'Play Store',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.w600,
+                                            color: _isHovered
+                                                ? AppColors.primary
+                                                : AppColors.textSecondary,
+                                            fontSize: 12,
+                                          ),
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                      ),
+                                      const SizedBox(width: 4),
+                                      Icon(
+                                        Icons.arrow_forward_rounded,
+                                        size: 14,
+                                        color: _isHovered
+                                            ? AppColors.primary
+                                            : AppColors.textSecondary,
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ),
-                              const SizedBox(width: 8),
-                              Icon(
-                                Icons.arrow_forward_rounded,
-                                size: 16,
-                                color: _isHovered
-                                    ? AppColors.primary
-                                    : AppColors.textSecondary,
+                            ),
+                          if (widget.project.androidUrl != null &&
+                              widget.project.iosUrl != null)
+                            const SizedBox(width: 8),
+                          if (widget.project.iosUrl != null)
+                            Expanded(
+                              child: SizedBox(
+                                height: 40,
+                                child: OutlinedButton(
+                                  onPressed: () async {
+                                    final url =
+                                        Uri.parse(widget.project.iosUrl!);
+                                    if (await canLaunchUrl(url)) {
+                                      await launchUrl(url);
+                                    }
+                                  },
+                                  style: OutlinedButton.styleFrom(
+                                    foregroundColor: AppColors.primary,
+                                    side: BorderSide(
+                                      color: _isHovered
+                                          ? AppColors.primary
+                                          : Colors.grey.shade300,
+                                    ),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(10),
+                                    ),
+                                    backgroundColor: _isHovered
+                                        ? AppColors.primary
+                                            .withValues(alpha: 0.05)
+                                        : Colors.transparent,
+                                    padding: const EdgeInsets.symmetric(
+                                        horizontal: 4),
+                                  ),
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children: [
+                                      Flexible(
+                                        child: Text(
+                                          'App Store',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.w600,
+                                            color: _isHovered
+                                                ? AppColors.primary
+                                                : AppColors.textSecondary,
+                                            fontSize: 12,
+                                          ),
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                      ),
+                                      const SizedBox(width: 4),
+                                      Icon(
+                                        Icons.arrow_forward_rounded,
+                                        size: 14,
+                                        color: _isHovered
+                                            ? AppColors.primary
+                                            : AppColors.textSecondary,
+                                      ),
+                                    ],
+                                  ),
+                                ),
                               ),
-                            ],
-                          ),
-                        ),
+                            ),
+                        ],
                       ),
                     ],
                   ],

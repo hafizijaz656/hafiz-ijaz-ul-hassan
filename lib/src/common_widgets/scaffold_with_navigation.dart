@@ -255,7 +255,7 @@ class _DesktopScaffold extends StatelessWidget {
   final ValueChanged<int> onDestinationSelected;
 
   Future<void> _downloadCV() async {
-    final Uri url = Uri.parse('assets/docs/hafiz_ijaz_ul_hassan_CV.pdf');
+    final Uri url = Uri.parse('/assets/assets/docs/hafiz_ijaz_ul_hassan_CV.pdf');
     if (!await launchUrl(url)) {
       debugPrint('Could not launch $url');
     }
