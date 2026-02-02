@@ -1,29 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
+import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../../../../common_widgets/responsive_layout.dart';
 import '../../../../constants/app_colors.dart';
 import '../../../../constants/app_content.dart';
 import '../../../../constants/app_sizes.dart';
 
-class FeaturedProjectsSection extends StatefulWidget {
-  const FeaturedProjectsSection({super.key});
-
-  @override
-  State<FeaturedProjectsSection> createState() =>
-      _FeaturedProjectsSectionState();
-}
-
-class _FeaturedProjectsSectionState extends State<FeaturedProjectsSection> {
-  String _selectedFilter = 'All';
+class HomeFeaturedProjectsSection extends StatelessWidget {
+  const HomeFeaturedProjectsSection({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final filteredProjects = _selectedFilter == 'All'
-        ? AppContent.projects
-        : AppContent.projects
-            .where((p) => p.category == _selectedFilter)
-            .toList();
+    final featuredProjects = AppContent.projects.take(3).toList();
 
     return Container(
       width: double.infinity,
@@ -42,29 +31,29 @@ class _FeaturedProjectsSectionState extends State<FeaturedProjectsSection> {
                 mobileBody: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      'Featured Projects',
-                      style: Theme.of(context).textTheme.displaySmall?.copyWith(
-                            fontWeight: FontWeight.bold,
-                            color: AppColors.textPrimary,
-                            fontSize: 32,
+                    RichText(
+                      text: TextSpan(
+                        style:
+                            Theme.of(context).textTheme.displaySmall?.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.textPrimary,
+                                  fontSize: 32,
+                                ),
+                        children: const [
+                          TextSpan(text: 'Featured '),
+                          TextSpan(
+                            text: 'Projects',
+                            style: TextStyle(color: AppColors.primary),
                           ),
+                        ],
+                      ),
                     ),
                     const SizedBox(height: AppSizes.p16),
                     Text(
-                      'Showcasing innovation through clean code and intuitive design.',
+                      'A selection of my recent work and contributions.',
                       style: Theme.of(context).textTheme.bodyLarge?.copyWith(
                             color: AppColors.textSecondary,
                           ),
-                    ),
-                    const SizedBox(height: AppSizes.p24),
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: _FilterButtons(
-                        selectedFilter: _selectedFilter,
-                        onFilterChanged: (filter) =>
-                            setState(() => _selectedFilter = filter),
-                      ),
                     ),
                   ],
                 ),
@@ -76,19 +65,27 @@ class _FeaturedProjectsSectionState extends State<FeaturedProjectsSection> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            'Featured Projects',
-                            style: Theme.of(context)
-                                .textTheme
-                                .displaySmall
-                                ?.copyWith(
-                                  fontWeight: FontWeight.bold,
-                                  color: AppColors.textPrimary,
+                          RichText(
+                            text: TextSpan(
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .displaySmall
+                                  ?.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                    color: AppColors.textPrimary,
+                                  ),
+                              children: const [
+                                TextSpan(text: 'Featured '),
+                                TextSpan(
+                                  text: 'Projects',
+                                  style: TextStyle(color: AppColors.primary),
                                 ),
+                              ],
+                            ),
                           ),
                           const SizedBox(height: AppSizes.p16),
                           Text(
-                            'Showcasing innovation through clean code and intuitive design.',
+                            'A selection of my recent work and contributions.',
                             style:
                                 Theme.of(context).textTheme.bodyLarge?.copyWith(
                                       color: AppColors.textSecondary,
@@ -98,31 +95,34 @@ class _FeaturedProjectsSectionState extends State<FeaturedProjectsSection> {
                       ),
                     ),
                     const SizedBox(width: 12),
-                    _FilterButtons(
-                      selectedFilter: _selectedFilter,
-                      onFilterChanged: (filter) =>
-                          setState(() => _selectedFilter = filter),
-                    ),
+                    const _ViewAllButton(),
                   ],
                 ),
               ),
               const SizedBox(height: AppSizes.p48),
               ResponsiveLayout(
                 mobileBody: _ProjectsGrid(
-                  projects: filteredProjects,
+                  projects: featuredProjects,
                   crossAxisCount: 1,
                   childAspectRatio: 0.8,
                 ),
                 tabletBody: _ProjectsGrid(
-                  projects: filteredProjects,
+                  projects: featuredProjects,
                   crossAxisCount: 2,
                   childAspectRatio: 0.6,
                 ),
                 desktopBody: _ProjectsGrid(
-                  projects: filteredProjects,
+                  projects: featuredProjects,
                   crossAxisCount: 3,
                   childAspectRatio: 0.8,
                 ),
+              ),
+              const SizedBox(height: AppSizes.p48),
+              // View All Button for Mobile
+              const ResponsiveLayout(
+                mobileBody: Center(child: _ViewAllButton()),
+                tabletBody: SizedBox.shrink(),
+                desktopBody: SizedBox.shrink(),
               ),
             ],
           ),
@@ -132,48 +132,27 @@ class _FeaturedProjectsSectionState extends State<FeaturedProjectsSection> {
   }
 }
 
-class _FilterButtons extends StatelessWidget {
-  const _FilterButtons({
-    required this.selectedFilter,
-    required this.onFilterChanged,
-  });
-
-  final String selectedFilter;
-  final ValueChanged<String> onFilterChanged;
+class _ViewAllButton extends StatelessWidget {
+  const _ViewAllButton();
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(4),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(8),
-        border: Border.all(color: Colors.grey.shade200),
+    return OutlinedButton.icon(
+      onPressed: () => context.go('/projects'),
+      style: OutlinedButton.styleFrom(
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+        side: const BorderSide(color: AppColors.primary),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
       ),
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: ['All', 'Flutter', 'Android'].map((filter) {
-          final isSelected = selectedFilter == filter;
-          return InkWell(
-            onTap: () => onFilterChanged(filter),
-            borderRadius: BorderRadius.circular(6),
-            child: Container(
-              padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-              decoration: BoxDecoration(
-                color: isSelected ? AppColors.primary : Colors.transparent,
-                borderRadius: BorderRadius.circular(6),
-              ),
-              child: Text(
-                filter,
-                style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                      color:
-                          isSelected ? Colors.white : AppColors.textSecondary,
-                      fontWeight: FontWeight.bold,
-                    ),
-              ),
+      icon: const Icon(Icons.arrow_forward, color: AppColors.primary),
+      label: Text(
+        'View All Projects',
+        style: Theme.of(context).textTheme.labelLarge?.copyWith(
+              color: AppColors.primary,
+              fontWeight: FontWeight.bold,
             ),
-          );
-        }).toList(),
       ),
     );
   }

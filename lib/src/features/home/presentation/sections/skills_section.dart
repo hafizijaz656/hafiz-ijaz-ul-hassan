@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animate/flutter_animate.dart';
 import '../../../../constants/app_colors.dart';
+import '../../../../constants/app_content.dart';
 import '../../../../constants/app_sizes.dart';
+import '../../../../utils/app_utils.dart';
 
 class SkillsSection extends StatelessWidget {
   const SkillsSection({super.key});
@@ -10,17 +11,17 @@ class SkillsSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      color: AppColors.backgroundAlt,
-      padding: const EdgeInsets.symmetric(
-        vertical: AppSizes.p64,
-        horizontal: AppSizes.p24,
+      color: Colors.white,
+      padding:  EdgeInsets.symmetric(
+        vertical: AppUtils.isMobile(context) ? AppSizes.p4 : AppSizes.p64,
+        horizontal: AppUtils.isMobile(context) ? AppSizes.p4 : AppSizes.p24,
       ),
       child: Center(
         child: Container(
           constraints: const BoxConstraints(maxWidth: AppSizes.maxContentWidth),
           padding: const EdgeInsets.all(AppSizes.p48),
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: AppColors.backgroundAlt,
             borderRadius: BorderRadius.circular(24),
             boxShadow: [
               BoxShadow(
@@ -35,80 +36,61 @@ class SkillsSection extends StatelessWidget {
               Text(
                 'Skill Proficiency',
                 style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.textPrimary,
-                ),
+                      fontWeight: FontWeight.bold,
+                      color: AppColors.textPrimary,
+                    ),
               ),
               const SizedBox(height: AppSizes.p8),
               Text(
                 'Quantifying my expertise in core technologies',
-                style: Theme.of(
-                  context,
-                ).textTheme.bodyLarge?.copyWith(color: AppColors.textSecondary),
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                      color: AppColors.textSecondary,
+                    ),
               ),
               const SizedBox(height: AppSizes.p48),
               LayoutBuilder(
                 builder: (context, constraints) {
                   final isDesktop = constraints.maxWidth > 800;
+                  
+                  // Split skills into two columns for desktop
+                  final midPoint = (AppContent.skills.length / 2).ceil();
+                  final leftSkills = AppContent.skills.sublist(0, midPoint);
+                  final rightSkills = AppContent.skills.sublist(midPoint);
+
                   return isDesktop
-                      ? const Row(
+                      ? Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Expanded(
                               child: Column(
-                                children: [
-                                  _SkillBar(
-                                    label: 'FLUTTER & DART',
-                                    percentage: 0.95,
-                                  ),
-                                  SizedBox(height: AppSizes.p32),
-                                  _SkillBar(
-                                    label: 'ANDROID (JAVA/KOTLIN)',
-                                    percentage: 0.90,
-                                  ),
-                                ],
+                                children: leftSkills
+                                    .map((skill) => Padding(
+                                          padding: const EdgeInsets.only(bottom: AppSizes.p32),
+                                          child: _SkillBar(item: skill),
+                                        ))
+                                    .toList(),
                               ),
                             ),
-                            SizedBox(width: AppSizes.p48),
+                            const SizedBox(width: AppSizes.p48),
                             Expanded(
                               child: Column(
-                                children: [
-                                  _SkillBar(
-                                    label: 'REST APIs & FIREBASE',
-                                    percentage: 0.92,
-                                  ),
-                                  SizedBox(height: AppSizes.p32),
-                                  _SkillBar(
-                                    label: 'GOOGLE MAPS & LOCATION',
-                                    percentage: 0.88,
-                                  ),
-                                ],
+                                children: rightSkills
+                                    .map((skill) => Padding(
+                                          padding: const EdgeInsets.only(bottom: AppSizes.p32),
+                                          child: _SkillBar(item: skill),
+                                        ))
+                                    .toList(),
                               ),
                             ),
                           ],
                         )
-                      : const Column(
-                          children: [
-                            _SkillBar(
-                              label: 'FLUTTER & DART',
-                              percentage: 0.95,
-                            ),
-                            SizedBox(height: AppSizes.p32),
-                            _SkillBar(
-                              label: 'STATE MANAGEMENT (BLOC/RIVERPOD)',
-                              percentage: 0.92,
-                            ),
-                            SizedBox(height: AppSizes.p32),
-                            _SkillBar(
-                              label: 'FIREBASE & BACKEND INTEGRATION',
-                              percentage: 0.88,
-                            ),
-                            SizedBox(height: AppSizes.p32),
-                            _SkillBar(
-                              label: 'CLEAN ARCHITECTURE / SOLID',
-                              percentage: 0.90,
-                            ),
-                          ],
+                      : Column(
+                          children: AppContent.skills
+                              .map((skill) => Padding(
+                                    padding: const EdgeInsets.only(bottom: AppSizes.p32),
+                                    child: _SkillBar(item: skill),
+                                  ))
+                              .toList(),
                         );
                 },
               ),
@@ -121,15 +103,14 @@ class SkillsSection extends StatelessWidget {
 }
 
 class _SkillBar extends StatelessWidget {
-  const _SkillBar({required this.label, required this.percentage});
+  const _SkillBar({required this.item});
 
-  final String label;
-  final double percentage;
+  final SkillItem item;
 
   @override
   Widget build(BuildContext context) {
     return TweenAnimationBuilder<double>(
-      tween: Tween<double>(begin: 0, end: percentage),
+      tween: Tween<double>(begin: 0, end: item.percentage),
       duration: const Duration(milliseconds: 1500),
       curve: Curves.easeOutCubic,
       builder: (context, value, child) {
@@ -140,19 +121,19 @@ class _SkillBar extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(
-                  label,
+                  item.label,
                   style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.textPrimary,
-                    letterSpacing: 1.0,
-                  ),
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.textPrimary,
+                        letterSpacing: 1.0,
+                      ),
                 ),
                 Text(
                   '${(value * 100).toInt()}%',
                   style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.primary,
-                  ),
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.primary,
+                      ),
                 ),
               ],
             ),

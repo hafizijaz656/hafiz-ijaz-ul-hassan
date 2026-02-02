@@ -28,19 +28,19 @@ class AboutMeSection extends StatelessWidget {
               Text(
                 'THE DEVELOPER',
                 style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                  color: AppColors.primary,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1.5,
-                ),
+                      color: AppColors.primary,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1.5,
+                    ),
               ).animate().fadeIn(duration: 600.ms).slideX(begin: -0.1, end: 0),
               const SizedBox(height: AppSizes.p16),
               Text(
-                    'Biography',
-                    style: Theme.of(context).textTheme.displayMedium?.copyWith(
+                'Biography',
+                style: Theme.of(context).textTheme.displayMedium?.copyWith(
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
                     ),
-                  )
+              )
                   .animate()
                   .fadeIn(duration: 600.ms, delay: 100.ms)
                   .slideX(begin: -0.1, end: 0),
@@ -48,9 +48,9 @@ class AboutMeSection extends StatelessWidget {
               Text(
                 aboutMe,
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
-                  color: AppColors.textSecondary,
-                  height: 1.5,
-                ),
+                      color: AppColors.textSecondary,
+                      height: 1.5,
+                    ),
               ).animate().fadeIn(duration: 600.ms, delay: 200.ms),
               const SizedBox(height: AppSizes.p48),
               // Content Grid
@@ -168,29 +168,32 @@ class _ProfessionalNarrativeCard extends StatelessWidget {
           Text(
             'Professional Narrative',
             style: Theme.of(context).textTheme.titleLarge?.copyWith(
-              fontWeight: FontWeight.bold,
-              color: AppColors.textPrimary,
-            ),
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.textPrimary,
+                ),
           ),
           const SizedBox(height: AppSizes.p24),
           Text(
             'Mobile Application Developer with 5+ years of experience in Android and Flutter development. Experienced in REST APIs, Firebase, Google Maps, and enterprise-grade mobile solutions.',
             style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-              color: AppColors.textSecondary,
-              height: 1.6,
-            ),
+                  color: AppColors.textSecondary,
+                  height: 1.6,
+                ),
           ),
           const SizedBox(height: AppSizes.p16),
           Text(
             'I focus on writing clean, maintainable code using patterns like BLoC and Provider, ensuring that applications are not only beautiful but also scalable. I\'ve led development for Fintech, E-commerce, and Social platforms, consistently delivering products that rank high on user satisfaction.',
             style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-              color: AppColors.textSecondary,
-              height: 1.6,
-            ),
+                  color: AppColors.textSecondary,
+                  height: 1.6,
+                ),
           ),
         ],
       ),
-    ).animate().fadeIn(duration: 600.ms, delay: 300.ms).slideY(begin: 0.1, end: 0);
+    )
+        .animate()
+        .fadeIn(duration: 600.ms, delay: 300.ms)
+        .slideY(begin: 0.1, end: 0);
   }
 }
 
@@ -209,7 +212,7 @@ class _StatsRow extends StatelessWidget {
       const Expanded(
         child: _StatCard(
           label: 'Published',
-          value: '25+',
+          value: '150+',
           subLabel: 'APPS',
           color: Color(0xFF0EA5E9), // Sky blue
         ),
@@ -226,18 +229,19 @@ class _StatsRow extends StatelessWidget {
     ];
 
     if (isMobile) {
-      return Column(
+      return const Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          const _StatCard(label: 'Experience', value: '5+', subLabel: 'YEARS'),
-          const SizedBox(height: AppSizes.p16),
-          const _StatCard(
+          _StatCard(label: 'Experience', value: '5+', subLabel: 'YEARS'),
+          SizedBox(height: AppSizes.p16),
+          _StatCard(
             label: 'Published',
-            value: '25+',
+            value: '150+',
             subLabel: 'APPS',
             color: Color(0xFF0EA5E9),
           ),
-          const SizedBox(height: AppSizes.p16),
-          const _StatCard(
+          SizedBox(height: AppSizes.p16),
+          _StatCard(
             label: 'Clients',
             value: '40+',
             subLabel: 'SATISFIED',
@@ -295,17 +299,17 @@ class _StatCard extends StatelessWidget {
           Text(
             value,
             style: Theme.of(context).textTheme.displaySmall?.copyWith(
-              fontWeight: FontWeight.bold,
-              color: color,
-            ),
+                  fontWeight: FontWeight.bold,
+                  color: color,
+                ),
           ),
           const SizedBox(height: 4),
           Text(
             subLabel,
             style: Theme.of(context).textTheme.labelSmall?.copyWith(
-              color: AppColors.textSecondary,
-              letterSpacing: 1.0,
-            ),
+                  color: AppColors.textSecondary,
+                  letterSpacing: 1.0,
+                ),
           ),
         ],
       ),
@@ -319,91 +323,91 @@ class _EducationCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-          padding: const EdgeInsets.all(AppSizes.p32),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(24),
-            border: Border.all(
-              color: AppColors.primary.withValues(alpha: 0.2),
-              width: 1,
-            ),
-            boxShadow: [
-              BoxShadow(
-                color: AppColors.primary.withValues(alpha: 0.05),
-                blurRadius: 20,
-                offset: const Offset(0, 4),
-              ),
-            ],
+      padding: const EdgeInsets.all(AppSizes.p32),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(24),
+        border: Border.all(
+          color: AppColors.primary.withValues(alpha: 0.2),
+          width: 1,
+        ),
+        boxShadow: [
+          BoxShadow(
+            color: AppColors.primary.withValues(alpha: 0.05),
+            blurRadius: 20,
+            offset: const Offset(0, 4),
           ),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
             children: [
-              Row(
-                children: [
-                  const Icon(
-                    FontAwesomeIcons.graduationCap,
-                    color: AppColors.primary,
-                  ),
-                  const SizedBox(width: 12),
-                  Text(
-                    'Education',
-                    style: Theme.of(context).textTheme.titleLarge?.copyWith(
+              const Icon(
+                FontAwesomeIcons.graduationCap,
+                color: AppColors.primary,
+              ),
+              const SizedBox(width: 12),
+              Text(
+                'Education',
+                style: Theme.of(context).textTheme.titleLarge?.copyWith(
                       fontWeight: FontWeight.bold,
                       color: AppColors.textPrimary,
                     ),
-                  ),
-                ],
               ),
-              const SizedBox(height: AppSizes.p24),
-              Text(
-                'BS Computer Science',
-                style: Theme.of(
-                  context,
-                ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 4),
-              Text(
-                'Riphah International University',
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+            ],
+          ),
+          const SizedBox(height: AppSizes.p24),
+          Text(
+            'BS Computer Science',
+            style: Theme.of(
+              context,
+            ).textTheme.titleMedium?.copyWith(fontWeight: FontWeight.bold),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            'Riphah International University',
+            style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                   color: AppColors.textSecondary,
                 ),
-              ),
-              const SizedBox(height: 8),
-              Text(
-                'Graduated with Distinction',
-                style: Theme.of(context).textTheme.bodySmall?.copyWith(
+          ),
+          const SizedBox(height: 8),
+          Text(
+            'Graduated with Distinction',
+            style: Theme.of(context).textTheme.bodySmall?.copyWith(
                   color: AppColors.primary,
                   fontWeight: FontWeight.w600,
                 ),
-              ),
-              const Padding(
-                padding: EdgeInsets.symmetric(vertical: 16),
-                child: Divider(),
-              ),
-              Text(
-                'EDUCATION HISTORY',
-                style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.textSecondary,
-                  letterSpacing: 1.0,
-                ),
-              ),
-              const SizedBox(height: 16),
-              const _CertificationItem('ICS - Superior College, Lahore (2015)'),
-              const SizedBox(height: 16),
-              Text(
-                'LANGUAGES',
-                style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                  fontWeight: FontWeight.bold,
-                  color: AppColors.textSecondary,
-                  letterSpacing: 1.0,
-                ),
-              ),
-              const SizedBox(height: 16),
-              const _CertificationItem('Urdu, English, Hindi'),
-            ],
           ),
-        )
+          const Padding(
+            padding: EdgeInsets.symmetric(vertical: 16),
+            child: Divider(),
+          ),
+          Text(
+            'EDUCATION HISTORY',
+            style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.textSecondary,
+                  letterSpacing: 1.0,
+                ),
+          ),
+          const SizedBox(height: 16),
+          const _CertificationItem('ICS - Superior College, Lahore (2015)'),
+          const SizedBox(height: 16),
+          Text(
+            'LANGUAGES',
+            style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                  fontWeight: FontWeight.bold,
+                  color: AppColors.textSecondary,
+                  letterSpacing: 1.0,
+                ),
+          ),
+          const SizedBox(height: 16),
+          const _CertificationItem('Urdu, English, Hindi'),
+        ],
+      ),
+    )
         .animate()
         .fadeIn(duration: 600.ms, delay: 500.ms)
         .slideY(begin: 0.1, end: 0);
@@ -458,23 +462,23 @@ class _TechStackSection extends StatelessWidget {
     ];
 
     return Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Tech Stack',
-              style: Theme.of(context).textTheme.titleLarge?.copyWith(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          'Tech Stack',
+          style: Theme.of(context).textTheme.titleLarge?.copyWith(
                 fontWeight: FontWeight.bold,
                 color: AppColors.textPrimary,
               ),
-            ),
-            const SizedBox(height: AppSizes.p24),
-            Wrap(
-              spacing: 12,
-              runSpacing: 12,
-              children: tags.map((tag) => _TechChip(tag)).toList(),
-            ),
-          ],
-        )
+        ),
+        const SizedBox(height: AppSizes.p24),
+        Wrap(
+          spacing: 12,
+          runSpacing: 12,
+          children: tags.map((tag) => _TechChip(tag)).toList(),
+        ),
+      ],
+    )
         .animate()
         .fadeIn(duration: 600.ms, delay: 600.ms)
         .slideY(begin: 0.1, end: 0);
@@ -497,9 +501,9 @@ class _TechChip extends StatelessWidget {
       child: Text(
         label,
         style: Theme.of(context).textTheme.bodySmall?.copyWith(
-          color: AppColors.primary,
-          fontWeight: FontWeight.bold,
-        ),
+              color: AppColors.primary,
+              fontWeight: FontWeight.bold,
+            ),
       ),
     );
   }

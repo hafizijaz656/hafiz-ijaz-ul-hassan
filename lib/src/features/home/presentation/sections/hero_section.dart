@@ -1,10 +1,9 @@
-import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
+import 'package:particles_network/particles_network.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:video_player/video_player.dart';
 import '../../../../common_widgets/responsive_layout.dart';
 import '../../../../constants/app_colors.dart';
 import '../../../../constants/app_sizes.dart';
@@ -17,63 +16,28 @@ class HeroSection extends StatefulWidget {
 }
 
 class _HeroSectionState extends State<HeroSection> {
-  late VideoPlayerController _controller;
-  bool _isInitialized = false;
-
-  @override
-  void initState() {
-    super.initState();
-    _controller =
-        VideoPlayerController.asset('assets/home_top_container_bg.mp4')
-          ..initialize()
-              .then((_) {
-                _controller.setLooping(true);
-                _controller.setVolume(0.0); // Mute the video
-                _controller.play();
-                setState(() {
-                  _isInitialized = true;
-                });
-              })
-              .catchError((error) {
-                debugPrint('Error initializing video player: $error');
-              });
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      color: AppColors.backgroundAlt,
+      color: AppColors.background,
       child: Stack(
         children: [
-          // Video Background
-          if (_isInitialized)
-            Positioned.fill(
-              child: FittedBox(
-                fit: BoxFit.cover,
-                child: SizedBox(
-                  width: _controller.value.size.width,
-                  height: _controller.value.size.height,
-                  child: VideoPlayer(_controller),
-                ),
-              ),
-            ),
-
-          //Overlay to ensure text readability
+          // Particles Background
           Positioned.fill(
-            child: ClipRect(
-              child: BackdropFilter(
-                filter: ImageFilter.blur(sigmaX: 3.0, sigmaY: 3.0),
-                child: Container(
-                  color: AppColors.textPrimary.withValues(alpha: 0.4),
-                ),
-              ),
+            child: ParticleNetwork(
+              particleCount: 50,
+              maxSpeed: 3.0,
+              maxSize: 1.5,
+              lineWidth: 1.5,
+              lineDistance: 150,
+              particleColor: AppColors.primary,
+              lineColor: AppColors.primary.withValues(alpha: 0.3),
+              touchColor: AppColors.secondary,
+              touchActivation: true,
+              drawNetwork: true,
+              fill: false,
+              isComplex: false,
             ),
           ),
 
@@ -89,7 +53,8 @@ class _HeroSectionState extends State<HeroSection> {
               ),
               child: const ResponsiveLayout(
                 mobileBody: _HeroMobile(),
-                tabletBody: _HeroDesktop(), // Tablet can likely share desktop layout or be a condensed version
+                tabletBody:
+                    _HeroDesktop(), // Tablet can likely share desktop layout or be a condensed version
                 desktopBody: _HeroDesktop(),
               ),
             ),
@@ -153,82 +118,82 @@ class _HeroContent extends StatelessWidget {
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
-              const Icon(Icons.circle, size: 8, color: AppColors.background),
+              const Icon(Icons.circle, size: 8, color: AppColors.primary),
               const SizedBox(width: 8),
               Text(
                 'AVAILABLE FOR NEW PROJECTS',
                 style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                  color: AppColors.background,
-                  fontWeight: FontWeight.bold,
-                  letterSpacing: 1.2,
-                ),
+                      color: AppColors.primary,
+                      fontWeight: FontWeight.bold,
+                      letterSpacing: 1.2,
+                    ),
               ),
             ],
           ),
         ).animate().fadeIn(duration: 600.ms).slideY(begin: 0.2, end: 0),
         const SizedBox(height: AppSizes.p24),
         RichText(
-              textAlign: textAlign,
-              text: TextSpan(
-                style: Theme.of(context).textTheme.displayLarge?.copyWith(
+          textAlign: textAlign,
+          text: TextSpan(
+            style: Theme.of(context).textTheme.displayLarge?.copyWith(
                   fontWeight: FontWeight.w900,
-                  color: AppColors.background,
+                  color: AppColors.textPrimary,
                   height: 1.1,
                 ),
-                children: const [
-                  TextSpan(text: 'Hafiz Ijaz\n'),
-                  TextSpan(
-                    text: 'Ul Hassan',
-                    style: TextStyle(color: AppColors.background),
-                  ),
-                ],
+            children: const [
+              TextSpan(text: 'Hafiz Ijaz\n'),
+              TextSpan(
+                text: 'Ul Hassan',
+                style: TextStyle(color: AppColors.primary),
               ),
-            )
+            ],
+          ),
+        )
             .animate()
             .fadeIn(delay: 200.ms, duration: 600.ms)
             .slideY(begin: 0.2, end: 0),
         const SizedBox(height: AppSizes.p24),
         Text(
-              'Mobile Application Developer with 5+ years of experience in Android and Flutter development.',
-              textAlign: textAlign,
-              style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                color: AppColors.background,
+          'Mobile Application Developer with 5+ years of experience in Android and Flutter development.',
+          textAlign: textAlign,
+          style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                color: AppColors.textSecondary,
                 fontWeight: FontWeight.normal,
               ),
-            )
+        )
             .animate()
             .fadeIn(delay: 400.ms, duration: 600.ms)
             .slideY(begin: 0.2, end: 0),
         const SizedBox(height: AppSizes.p40),
         Row(
-              mainAxisAlignment: textAlign == TextAlign.center
-                  ? MainAxisAlignment.center
-                  : MainAxisAlignment.start,
-              children: [
-                ElevatedButton(
-                  onPressed: () => context.go('/projects'),
-                  child: const Text('View Projects'),
+          mainAxisAlignment: textAlign == TextAlign.center
+              ? MainAxisAlignment.center
+              : MainAxisAlignment.start,
+          children: [
+            ElevatedButton(
+              onPressed: () => context.go('/projects'),
+              child: const Text('View Projects'),
+            ),
+            const SizedBox(width: AppSizes.p16),
+            OutlinedButton(
+              onPressed: () => context.go('/contact'),
+              style: OutlinedButton.styleFrom(
+                foregroundColor: AppColors.textPrimary,
+                side: const BorderSide(
+                  color: AppColors.textPrimary,
+                ), // Default border color
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 24,
+                  vertical: 16,
                 ),
-                const SizedBox(width: AppSizes.p16),
-                OutlinedButton(
-                  onPressed: () => context.go('/contact'),
-                  style: OutlinedButton.styleFrom(
-                    foregroundColor: AppColors.background,
-                    side: const BorderSide(
-                      color: AppColors.background,
-                    ), // Default border color
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 24,
-                      vertical: 16,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8),
-                    ),
-                  ),
-                  child: const Text('Contact Me'),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8),
                 ),
-              ],
-            )
+              ),
+              child: const Text('Contact Me'),
+            ),
+          ],
+        )
             .animate()
             .fadeIn(delay: 600.ms, duration: 600.ms)
             .slideY(begin: 0.2, end: 0),
@@ -239,20 +204,20 @@ class _HeroContent extends StatelessWidget {
             .slideY(begin: 0.2, end: 0),
         const SizedBox(height: AppSizes.p48),
         Row(
-              mainAxisAlignment: textAlign == TextAlign.center
-                  ? MainAxisAlignment.center
-                  : MainAxisAlignment.start,
-              children: [
-                const _StatItem(value: '50+', label: 'APPS LAUNCHED'),
-                Container(
-                  height: 40,
-                  width: 1,
-                  color: Colors.grey.shade300,
-                  margin: const EdgeInsets.symmetric(horizontal: AppSizes.p24),
-                ),
-                const _StatItem(value: '5+', label: 'YEARS EXP'),
-              ],
-            )
+          mainAxisAlignment: textAlign == TextAlign.center
+              ? MainAxisAlignment.center
+              : MainAxisAlignment.start,
+          children: [
+            const _StatItem(value: '150+', label: 'APPS LAUNCHED'),
+            Container(
+              height: 40,
+              width: 1,
+              color: Colors.grey.shade300,
+              margin: const EdgeInsets.symmetric(horizontal: AppSizes.p24),
+            ),
+            const _StatItem(value: '5+', label: 'YEARS EXP'),
+          ],
+        )
             .animate()
             .fadeIn(delay: 800.ms, duration: 600.ms)
             .slideY(begin: 0.2, end: 0),
@@ -328,13 +293,13 @@ class _SocialButtonState extends State<_SocialButton> {
         icon: Icon(
           widget.icon,
           size: 24,
-          color: _isHovered ? AppColors.primary : AppColors.textSecondary,
+          color: _isHovered ? AppColors.primary : AppColors.background,
         ),
         tooltip: widget.label,
         style: IconButton.styleFrom(
           backgroundColor: _isHovered
               ? AppColors.secondary.withValues(alpha: 0.1)
-              : AppColors.background,
+              : AppColors.textSecondary,
           padding: const EdgeInsets.all(12),
         ),
       ),
@@ -356,16 +321,16 @@ class _StatItem extends StatelessWidget {
         Text(
           value,
           style: Theme.of(context).textTheme.headlineMedium?.copyWith(
-            fontWeight: FontWeight.bold,
-            color: AppColors.background,
-          ),
+                fontWeight: FontWeight.bold,
+                color: AppColors.textPrimary,
+              ),
         ),
         Text(
           label,
           style: Theme.of(context).textTheme.labelSmall?.copyWith(
-            color: AppColors.background,
-            fontWeight: FontWeight.bold,
-          ),
+                color: AppColors.textSecondary,
+                fontWeight: FontWeight.bold,
+              ),
         ),
       ],
     );
@@ -460,9 +425,9 @@ class _HeroImage extends StatelessWidget {
                 Text(
                   'Flutter Expert',
                   style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                    fontWeight: FontWeight.bold,
-                    color: AppColors.textPrimary,
-                  ),
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.textPrimary,
+                      ),
                 ),
               ],
             ),

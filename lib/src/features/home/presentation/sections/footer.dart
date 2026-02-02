@@ -9,11 +9,11 @@ class Footer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      color: Colors.white,
+      color: AppColors.backgroundAlt,
       padding: const EdgeInsets.symmetric(vertical: AppSizes.p32),
       child: Center(
         child: Text(
-          '© 2024 Hafiz Ijaz Ul Hassan. Built with Flutter precision & Web performance.',
+          '© ${DateTime.now().year} Hafiz Ijaz Ul Hassan. Built with Flutter precision & Web performance.',
           textAlign: TextAlign.center,
           style: Theme.of(context).textTheme.bodySmall?.copyWith(
                 color: AppColors.textSecondary,

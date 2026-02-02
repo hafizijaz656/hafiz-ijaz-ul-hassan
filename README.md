@@ -1,86 +1,101 @@
-# Hafiz Ijaz Ul Hassan
+# Hafiz Ijaz Ul Hassan - Portfolio
 
-**Live Preview: 👉🏽 [hafiz-ijaz-ul-hassan.web.app](https://hafiz-ijaz-ul-hassan.web.app/)**
+[![Flutter](https://img.shields.io/badge/Flutter-3.7.9-%2302569B?logo=flutter)](https://flutter.dev)
+[![Dart](https://img.shields.io/badge/Dart-2.19.6-%230175C2?logo=dart)](https://dart.dev)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-✨ Hello there, I'm Hafiz Ijaz Ul Hassan. This is my personal website, which contains publicly available information that can be found on the internet.
+**Live Preview:** 👉 [hafiz-ijaz-ul-hassan.web.app](https://hafiz-ijaz-ul-hassan.web.app/)
 
-## 🌐 Website
+Welcome to my personal portfolio repository! This project serves as a showcase of my professional journey, skills, and projects as a Mobile Application Developer specializing in Flutter and Android. It is a modern, responsive web application built entirely with Flutter, demonstrating the framework's capabilities for web development.
 
-<https://hafiz-ijaz-ul-hassan.web.app/>  
+---
 
-## 🎉 Release Status
+## 🚀 Key Features
 
-Version - v1.1.2  
-Initial release date - April 12, 2023  
-[View all releases](https://github.com/dileepabandara/dileepabandara.dev/releases)
+*   **Responsive Design:** optimized for Mobile, Tablet, and Desktop views using a custom `ResponsiveLayout` wrapper.
+*   **Interactive UI:** Features a dynamic particle network background (`particles_network`) and smooth entry animations (`flutter_animate`).
+*   **Navigation:** Deep linking and persistent shell navigation powered by `go_router`.
+*   **Clean Architecture:** Structured using a feature-first approach for scalability and maintainability.
+*   **Modern Styling:** Custom theme based on Google Fonts (Poppins) and a professional color palette.
 
-## 🍃 Branches
+## �️ Tech Stack
 
-Source Code
+*   **Framework:** [Flutter](https://flutter.dev) (Web)
+*   **Language:** [Dart](https://dart.dev)
+*   **State Management:** `StatefulWidget` & Local State (Simple & Efficient for this scale)
+*   **Routing:** [go_router](https://pub.dev/packages/go_router)
+*   **Animations:** [flutter_animate](https://pub.dev/packages/flutter_animate), [particles_network](https://pub.dev/packages/particles_network)
+*   **UI Components:** [font_awesome_flutter](https://pub.dev/packages/font_awesome_flutter), [google_fonts](https://pub.dev/packages/google_fonts)
+*   **Hosting:** Firebase Hosting
 
-- [main](https://github.com/hafizijaz656/hafiz-ijaz-ul-hassan.git) - Stable and latest version of the source code
+## 📂 Project Structure
 
-## 💙 Built With
+The codebase follows a feature-first architecture to ensure modularity:
 
-- [Flutter](https://flutter.dev)
-  - Flutter 3.7.9 • channel stable
-  - Tools • Dart 2.19.6 • DevTools 2.20.1
-- [GitHub Pages](https://pages.github.com)
+```
+lib/src/
+├── common_widgets/    # Reusable UI components (Scaffold, Responsive Layouts)
+├── constants/         # App-wide constants (Colors, Sizes, Strings)
+├── features/          # Feature modules containing presentation logic
+│   ├── home/          # Landing page, Hero section, Skills
+│   ├── projects/      # Portfolio showcase
+│   ├── experience/    # Professional timeline
+│   ├── about/         # Personal bio
+│   └── contact/       # Contact information
+└── routing/           # Navigation configuration (GoRouter)
+```
 
-## 📌 Prerequisites
+## ⚡ Getting Started
 
-- Setup [Flutter](https://flutter.dev) in the development environment.
-- Setup a code editor like [Android Studio](https://developer.android.com/studio) or [Visual Studio Code](https://code.visualstudio.com) in the development environment.
-- Setup [Git](https://git-scm.com) in the development environment.
-- Should be fine with the `flutter doctor` command.
-- Anything related to the Flutter app development.
+Follow these steps to set up the project locally on your machine.
 
-## 💡 How to Set Up
+### Prerequisites
 
-- Download or clone the repository.
-- Move the project to the selected directory.
-- Open it with a code editor such as [Android Studio](https://developer.android.com/studio) or [Visual Studio Code](https://code.visualstudio.com).
-- Run `flutter clean` and `pub get` commands.
-- **Do not update or upgrade Gradle and other versions until the app is up and running with built versions.**
+*   [Flutter SDK](https://docs.flutter.dev/get-started/install) (Version 3.7.0 or higher recommended)
+*   [Dart SDK](https://dart.dev/get-dart)
+*   An IDE like [Android Studio](https://developer.android.com/studio) or [VS Code](https://code.visualstudio.com/)
 
-## 🚀 How to Run
+### Installation
 
-- Download `web-build` directory from the [web-build](https://github.com/dileepabandara/dileepabandara.dev/tree/web-build) branch.
-- Move the build files to a server such as `localhost`, `GitHub Pages`, or any other `http/https` web server.
-- Set up and run the `index.html` file.
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/hafizijaz656/hafiz-ijaz-ul-hassan.git
+    cd hafiz-ijaz-ul-hassan-main
+    ```
 
-## 🖼️ Icons and Images
+2.  **Install dependencies:**
+    ```bash
+    flutter pub get
+    ```
 
-- [Icons8](https://icons8.com)
+3.  **Run the app:**
+    ```bash
+    # For Chrome
+    flutter run -d chrome
+    ```
 
-## 💎 Dependencies
+## 🤝 Contributing
 
-- [Flutter](https://flutter.dev)/[Dart](https://dart.dev): Environment SDK: `>=2.19.2 <3.0.0`
-- [Cupertino Icons](https://pub.dev/packages/cupertino_icons): `^1.0.2`
-- [URL Launcher](https://pub.dev/packages/url_launcher): `^6.1.9`
-- [Flutter Native Splash](https://pub.dev/packages/flutter_native_splash): `^2.2.17`
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-## 💙 Contributing
-
-If you find any issues with this branch or would like to suggest changes, feel free to submit a pull request or open an issue. Please make sure to follow the [Contributing Guidelines](https://github.com/dileepabandara/dileepabandara.dev/blob/main/CONTRIBUTING.md) before your contribution.
-
-## ❤️ Thanks
-
-Thanks to everyone who supported.
+1.  Fork the Project
+2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4.  Push to the Branch (`git push origin feature/AmazingFeature`)
+5.  Open a Pull Request
 
 ## 📜 License
 
-This project is licensed under the MIT License.  
-MIT [©dileepabandara.dev](https://dileepabandara.dev)  
-See the license file for more
-details [LICENSE.md](https://github.com/dileepabandara/dileepabandara.dev/blob/main/LICENSE)
+Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 👨‍💻 Developed By
 
-Hafiz Ijaz Ul Hassan  
-[©HafizIjazUlHassan](https://hafiz-ijaz-ul-hassan.web.app/)
+**Hafiz Ijaz Ul Hassan**
 
-## 💬 Contact
+*   **GitHub:** [@hafizijaz656](https://github.com/hafizijaz656)
+*   **LinkedIn:** [Hafiz Ijaz Ul Hassan](https://www.linkedin.com/in/hafiz-ijaz-ul-hassan-846973170)
+*   **Email:** [hafizijaz656@gmail.com](mailto:hafizijaz656@gmail.com)
 
-Send me an email if you need to contact me to discuss anything.  
-Email - <hafizijaz656@gmail.com>
+---
+
+*Thank you for visiting my portfolio! If you find this project interesting, please consider giving it a star ⭐.*

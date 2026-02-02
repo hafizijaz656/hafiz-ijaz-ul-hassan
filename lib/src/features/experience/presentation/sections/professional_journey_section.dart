@@ -53,10 +53,11 @@ class _Timeline extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(
       builder: (context, constraints) {
-        // Simple vertical timeline for now, can be responsive
+        final isMobile = constraints.maxWidth < 800;
+
         return Column(
           children: [
-            const _TimelineItem(
+            _TimelineItem(
               title: 'Sr.Mobile Apps Developer (Flutter)',
               company: 'Epazz Tech',
               period: 'OCT 2025 - PRESENT',
@@ -65,8 +66,9 @@ class _Timeline extends StatelessWidget {
               tags: ['FLUTTER', 'DART', 'RIVERPOD', 'FIREBASE'],
               isLeft: true,
               icon: FontAwesomeIcons.briefcase,
+              isMobile: isMobile,
             ),
-            const _TimelineItem(
+            _TimelineItem(
               title: 'Mobile Apps Developer (Flutter)',
               company: 'ConversoTech',
               period: 'MAY 2024 - OCT 2025',
@@ -75,8 +77,9 @@ class _Timeline extends StatelessWidget {
               tags: ['FLUTTER', 'DART', 'GETX', 'FIREBASE'],
               isLeft: false,
               icon: FontAwesomeIcons.mobile,
+              isMobile: isMobile,
             ),
-            const _TimelineItem(
+            _TimelineItem(
               title: 'Flutter Developer',
               company: 'Prosigns',
               period: 'MAR 2023 - MAR 2024',
@@ -85,8 +88,9 @@ class _Timeline extends StatelessWidget {
               tags: ['FLUTTER', 'REST API', 'UI/UX'],
               isLeft: true,
               icon: FontAwesomeIcons.code,
+              isMobile: isMobile,
             ),
-            const _TimelineItem(
+            _TimelineItem(
               title: 'Flutter Developer / Mobile App Developer',
               company: 'Catalyic Tech',
               period: 'AUG 2021 - MAR 2023',
@@ -95,8 +99,9 @@ class _Timeline extends StatelessWidget {
               tags: ['FLUTTER', 'ANDROID', 'CLEAN ARCH'],
               isLeft: false,
               icon: FontAwesomeIcons.layerGroup,
+              isMobile: isMobile,
             ),
-            const _TimelineItem(
+            _TimelineItem(
               title: 'Android Developer',
               company: 'CreCode IT Professionals',
               period: 'APR 2020 - APR 2021',
@@ -105,6 +110,7 @@ class _Timeline extends StatelessWidget {
               tags: ['ANDROID', 'JAVA', 'KOTLIN'],
               isLeft: true,
               icon: FontAwesomeIcons.android,
+              isMobile: isMobile,
             ),
           ]
               .animate(interval: 200.ms)
@@ -125,6 +131,7 @@ class _TimelineItem extends StatelessWidget {
     required this.tags,
     required this.isLeft,
     required this.icon,
+    required this.isMobile,
   });
 
   final String title;
@@ -134,9 +141,153 @@ class _TimelineItem extends StatelessWidget {
   final List<String> tags;
   final bool isLeft;
   final IconData icon;
+  final bool isMobile;
 
   @override
   Widget build(BuildContext context) {
+    if (isMobile) {
+      return IntrinsicHeight(
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            SizedBox(
+              width: 40,
+              child: Column(
+                children: [
+                  Container(
+                    width: 40,
+                    height: 40,
+                    decoration: BoxDecoration(
+                      color: AppColors.primary,
+                      shape: BoxShape.circle,
+                      border: Border.all(color: Colors.white, width: 4),
+                      boxShadow: [
+                        BoxShadow(
+                          color: AppColors.primary.withValues(alpha: 0.3),
+                          blurRadius: 10,
+                          offset: const Offset(0, 4),
+                        ),
+                      ],
+                    ),
+                    child: Icon(icon, color: Colors.white, size: 16),
+                  ),
+                  Expanded(
+                    child: Container(width: 2, color: Colors.grey.shade300),
+                  ),
+                ],
+              ),
+            ),
+            const SizedBox(width: 24),
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 48),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      period,
+                      style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                            fontWeight: FontWeight.bold,
+                            color: AppColors.textSecondary,
+                            letterSpacing: 1.0,
+                          ),
+                    ),
+                    const SizedBox(height: 8),
+                    Container(
+                      padding: const EdgeInsets.all(16),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(16),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.black.withValues(alpha: 0.05),
+                            blurRadius: 20,
+                            offset: const Offset(0, 4),
+                          ),
+                        ],
+                      ),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            title,
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleLarge
+                                ?.copyWith(
+                                  fontWeight: FontWeight.bold,
+                                  color: AppColors.textPrimary,
+                                  fontSize: 18,
+                                ),
+                          ),
+                          if (company.isNotEmpty) ...[
+                            const SizedBox(height: 4),
+                            Text(
+                              company,
+                              style: Theme.of(context)
+                                  .textTheme
+                                  .titleSmall
+                                  ?.copyWith(
+                                    color: AppColors.primary,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                            ),
+                          ],
+                          const SizedBox(height: 12),
+                          Text(
+                            description,
+                            style: Theme.of(context)
+                                .textTheme
+                                .bodyMedium
+                                ?.copyWith(
+                                  color: AppColors.textSecondary,
+                                  height: 1.5,
+                                ),
+                          ),
+                          if (tags.isNotEmpty) ...[
+                            const SizedBox(height: 16),
+                            Wrap(
+                              spacing: 8,
+                              runSpacing: 8,
+                              children: tags
+                                  .map(
+                                    (tag) => Container(
+                                      padding: const EdgeInsets.symmetric(
+                                        horizontal: 12,
+                                        vertical: 6,
+                                      ),
+                                      decoration: BoxDecoration(
+                                        color: AppColors.primary
+                                            .withValues(alpha: 0.1),
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                      child: Text(
+                                        tag,
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .labelSmall
+                                            ?.copyWith(
+                                              color: AppColors.primary,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                      ),
+                                    ),
+                                  )
+                                  .toList(),
+                            ),
+                          ],
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+
     return IntrinsicHeight(
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.stretch,
