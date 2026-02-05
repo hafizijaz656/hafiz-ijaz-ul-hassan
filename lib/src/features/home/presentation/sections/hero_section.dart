@@ -27,7 +27,7 @@ class _HeroSectionState extends State<HeroSection> {
           Positioned.fill(
             child: ParticleNetwork(
               particleCount: 50,
-              maxSpeed: 3.0,
+              maxSpeed: 2.0,
               maxSize: 1.5,
               lineWidth: 1.5,
               lineDistance: 150,
